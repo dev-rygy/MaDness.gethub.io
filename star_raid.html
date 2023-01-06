@@ -20,9 +20,11 @@
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="soc.html" class="active">Spirit of Calamity</a></li>
-						<li><a href="tiny_knight.html">Tiny Knight</a></li>
-						<li><a href="angry_apple.html">Angry Apple</a></li>
+						<li><a href="hells_kitchen.html">Hell's Kitchen</a></li>
+						<li><a href="bloodlust.html">Bloodlust</a></li>
+						<li><a href="star_raid.html" class="active">Star Raid</a></li>
+						<li><a href="space_journey.html">Space Journey</a></li>
+						<li><a href="other_pj.html">Spirit of Calamity</a></li>
 						<li><a href="other_pj.html">Smaller Projects</a></li>
 					</ul>
 				</nav>
@@ -32,25 +34,87 @@
 			<div id="wrapper">
 
 				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major">Spirit of Calamity</h1>
-							<span class="image fit"><img src="images/pic06.jpg" alt="" /></span>
-							<p>A restless spirit is rare a spirit that embodies the soul of it's host. It is summoned after the host's demise only if the death was caused by great distress
-								or some kind of important duty was not fullfilled. It's is true, its origins remain unknown but some say this spirit is a division of some kind of Spirit of Calamity; a very powerful
-								spirit that is capable of having the abilities of a demi-god. As a restless spirit, the player traverses a large castle where many untold horrors lie. Your goal is to
-								find why you were summoned and to carry out your destiny.
-							<p>Spirit of Calamity is perhaps the sole idea of what really got me into game design. As a child I have been facinated with my ability to create intricate worlds and
-								plots that even surprise me at times. And because in a video game you can create just that and whatever you can imagine, I never doubted becoming a game designer was
-								the career path for me. Spirit of Calamity is the birth of my creativity, it's a world I've fantasized about since I was a teenager and one I wish to see badly come to life. 
-								I could spend countless hours talking about the lore and story of the game. This is the game I'm most passionate about and I won't settle for less than <strike>perfect</strike>
-								*nearly perfect*.
-							</p>
-							<ul class="icons">
-								<li>Repository Link - <a href="https://github.com/MaDness1184/Spirit-of-Calamity" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							</ul>
+				<section id="main" class="wrapper">
+					<div class="inner">
+						<h1 class="major">Star Raid</h1>
+						<!-- <span class="image fit"><img src="images/pic16.jpg" alt="" /></span> -->
+						<span class="image fit"><img src="images/hk_cutscene.gif" alt="" /></span>
+						<h2>Summary</h2>
+						<p>Star Raid is a game that I started with my friend back in 2020, we planned on making it into a full game but decided to 
+							halt the progression due to the scope being too large and wanting to move onto a project more tangable. The game is set in Space
+							with a focus on multiplayer. The player(s) must try to survive against multiple waves of aleins that invade the ship that's stranded
+							in deep space.
+						</p>
+						<span class="image fit"><img src="images/hk_gameplay.gif" alt="" /></span>
+						<h2>Gameplay</h2>
+						<p>The game starts in the hanger of the ship. The player(s) spawn near their crashed ship, they must explore and survive the alien waves that invade
+							the ship frequently. The ship is randomly generated which means that each run the loot and rooms on the ship change. Special rooms hold machines that
+							are vital to the ships functions. The radar helps locate valuable loot, the generator powers the ship and keeps the lights on, etc. The player(s)
+							must defend the machines as much as they can or risk their defense and scavage for loot. The players can craft items and structures that can help 
+							them defend the ship and repair. Some items require heavy defending as the container they are in can be easily destroyed by enemies. The end goal
+							is to repair their former ship, the big ship they are on, or take an escape pod.
+						</p>
+						<h2>Implemented Features</h2>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Peer to Peer Server Model</td>
+										<td>Co-op done using Mirror, an open source netowrking tool for Unity. A Player's system would act as a server and connect
+											to all the other clients. This system is highly subject to cheating but we did not plan to have any sourt of competitive play or
+											leaderboard system so we thought it was ok for our type of model.
+										</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Command Line</td>
+										<td>Command Line that can be used in real time for debugging purposes.</td>
+									</tr>
+									<tr>
+										<td>Random Generation</td>
+										<td>Each room on the ship randomly generated in respect to type and loot to add diversity thrughout each run.</td>
+									</tr>
+									<tr>
+										<td>Crafting System</td>
+										<td>Scalable system that allows the player to craft items and structures like health kits and turrets.</td>
+									</tr>
+									<tr>
+										<td>Bullet Raycasting</td>
+										<td>To save on performance we decided to use raycasting/hitscan for the bullets. Bullets would still come out of the gun but would
+											be a visual mechanic handled on the client.
+										</td>
+									</tr>
+									<tr>
+										<td>Placeable Objects</td>
+										<td>Certain objects in the Player's inventory could be placed on a ground tile and would act as either an aid for the player or a defense
+											against enemies.</td>
+									</tr>
+									<tr>
+										<td>A* Pathfinding</td>
+										<td>A* is a highly optimal pathfinding system that uses a graph traversal search through nodes in a list
+											to seach for the most desirable path to reach a target. 
+										</td>
+									</tr>
+									<tr>
+										<td>Music and Sound</td>
+										<td>Sounds found from free website and mixed. <a href="https://madness1184.itch.io/hells-kitchen">https://opengameart.org/</span></a></td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
-					</section>
+						<br>
+						<br>
+						<ul class="icons">
+							<li>Link to Prototype - <a href="https://madness1184.itch.io/hells-kitchen">https://madness1184.itch.io/hells-kitchen</span></a></li>
+						</ul>
+					</div>
+				</section>
 
 			</div>
 
