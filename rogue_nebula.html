@@ -36,19 +36,20 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">Bloodlust</h1>
+							<h1 class="major">Rogue Nebula</h1>
 							<!-- <span class="image fit"><img src="images/pic16.jpg" alt="" /></span> -->
 							<span class="image fit"><img src="images/bl_start.gif" alt="" /></span>
 							<h2>Summary</h2>
-							<p>Bloodlust is a game I made with one of my friends for Ludum Dare 49. Ludum Dare is a contest where you are given 72 hours to create a small game based
-								on a particular theme. The theme choosen for this jam was "Prevent the Inevitable" and it was also close to Halloween so we decided to make a game
-								about a vampire who must feast on his victims to survive.
+							<p>A project made for the Video Game Design Club during their summer session. Endlessly plow through waves of enemies in the persuite of a high score. A game that is
+								heavily inspired by classic arcade games like Galaga, Defender 1981, and Space Invaders. This game features a scrolling 3D envirnment, a reactive user interface,
+								vibrant special effects, and an assortment of enemy behaviors.
 							</p>
 							<span class="image fit"><img src="images/bl_gameplay.gif" alt="" /></span>
 							<h2>Gameplay</h2>
-							<p>The player starts with a full blood count which starts ticking at the beginning of the game. Once the count reaches zero the player dies. Watch the guard's
-								scheduals to know when the best time to strike will be. But be wary if you let a victim get away they will alert the nearest guard. Some NPCs have weapons
-								which the player can pick up and use to their advantage. The aim of the game is to survive and get as many kills as possible.
+							<p>The player first must choose a name to go by in order to get a leaderboard entry, if they do not choose a name they are "anonymous". The player is then imediatly
+								thrusted into the first wave of enemies, in order to survive the player must dodge their flurry of bullets and fire back. The player is not completely helpless through
+								as they have abilities and a secondary weapon to help them. Every eight waves the game starts upping the difficulty, after wave sixteen you are on the hardest difficulty
+								and from there on you must try to survive an endless horde. This game is not easy but a verteran bullet hell player might get high into the score system.
 							</p>
 							<h2>Implemented Features</h2>
 							<div class="table-wrapper">
@@ -61,35 +62,47 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td>Day and Night Cycles</td>
-											<td>Day and night cycle that affects NPC shcedualing and player vision. 
+											<td>High Score System</td>
+											<td>The high score is persistant throughout the playthough utalizing Unity's Scriptable Object System. 
 											</td>
 											<td></td>
 										</tr>
 										<tr>
-											<td>Dynamic NPC Scheduals</td>
-											<td>Each NPC is given a specific schedual based on delta time and a waypoint system.</td>
+											<td>Plyer Abilities</td>
+											<td>The player is given a small set of unique abilites. An Evade that gives the player invunerability frames and extra speed and a Bubble Shield that also
+												make the player invunerable for a more extended period of time. Each ability has a cooldown timer that communicates with the player's HUD to let the player
+												know when they can use it again.
+											</td>
 										</tr>
 										<tr>
-											<td>Inventory System</td>
-											<td>An inventory system determines what type of weapon the player has.</td>
+											<td>Assortment of Unique Enemies</td>
+											<td>The game features four unique enemy types. A standard enemy that flys back and fourth across the screen and shoots bullets at a semi random rate,
+												a radial enemy that shoots bullets in eight different directions, a bomber enemy that periodically drops timed bombs, and a homing enemy that tracks
+												the player's position and shoots bullets at the players direction.
+											</td>
 										</tr>
 										<tr>
-											<td>AI Reaction Based Behavior</td>
-											<td>NPCs react to the player's attack using a suspician system. This makes them wary of the player if he has attacked them
-												or to go to a guard for help.
+											<td>Dynamic Wave System</td>
+											<td> The game reacts to the player's wave count. Every ten waves the game will intraduce new enemies and make harder varients of basic enemies to up the challenge.
+											</td>
+										</tr>
+										<tr>
+											<td>Particle System and Shaders</td>
+											<td> The game features unique hit and destroy particles heavily inspired by arcade games. The explosion particles not only use high quality explosions from Unity's particle pack but
+												also voxels to elicite a 3D arcade-like effect. The hit effects reflect the type of entity damaged and change color using a combination of lightning particles and 2D sprites.
+												The player is given a special shader fresnel effect when hit.
 											</td>
 										</tr>
 										<tr>
 											<td>Music and Sound</td>
-											<td>Sounds found from free website and mixed. <a href="https://madness1184.itch.io/hells-kitchen">https://opengameart.org/</span></a></td>
+											<td>Music and Sound made by a very talented member of the club, Edrick Fajardo. (efajard4@asu.edu)</span></a></td>
 										</tr>
 									</tbody>
 								</table>
 							<br>
 							<ul class="icons">
-								<li>Link to Prototype - <a href="https://madness1184.itch.io/bloodlust">https://madness1184.itch.io/bloodlust</span></a></li>
-								<li>Repository Link - <a href="https://github.com/MaDness1184/Bloodlust-LDGJ-Version" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								<li>Link to Game - <a href="https://heatwave-studios.itch.io/rogue-nebula">https://heatwave-studios.itch.io/rogue-nebula</span></a></li>
+								<li>Repository Link - <a href="https://github.com/GDCASU/SummerSession2023" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 							</ul>
 						</div>
 					</section>
