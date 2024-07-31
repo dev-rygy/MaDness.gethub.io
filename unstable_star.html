@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Ryan Carpenter's Portfolio - Rogue Nebula</title>
+		<title>Ryan Carpenter's Portfolio - Future Scape</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -20,9 +20,9 @@
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="rogue_nebula.html" class="active">Rogue Nebula</a></li>
+						<li><a href="rogue_nebula.html">Rogue Nebula</a></li>
 						<li><a href="future_scape.html">Future Scape</a></li>
-						<li><a href="unstable_star.html">Unstable Star</a></li>
+						<li><a href="unstable_star.html" class="active">Unstable Star</a></li>
 						<li><a href="hells_kitchen.html">The Devil's Diner</a></li>
 						<li><a href="bloodlust.html">Bloodlust</a></li>
 						<li><a href="star_raid.html">Star Raid</a></li>
@@ -43,16 +43,18 @@
 							<!-- <span class="image fit"><img src="images/pic16.jpg" alt="" /></span> -->
 							<span class="image fit"><img src="images/bl_start.gif" alt="" /></span>
 							<h2>Summary</h2>
-							<p>A project made for the Video Game Design Club during their summer session. Endlessly plow through waves of enemies in the persuite of a high score. A game that is
-								heavily inspired by classic arcade games like Galaga, Defender 1981, and Space Invaders. This game features a scrolling 3D envirnment, a reactive user interface,
-								vibrant special effects, and an assortment of enemy behaviors.
+							<p> Unstable Star was a game made in collaboration with the Video Game Design Club at Arizona State University. This game features three
+								unique levels and two challenging boss fights. Embark on a lighthearted and action-packed journey of redemption. A former Border Guard 
+								for the Intragalactic Coalition, he quickly becomes embroiled in an unexpected Rebellion to save the galaxy. I was the vice president and
+								the systems lead for the project. I overseed project management including, organizing and schedualing tasks for my team and mapping the
+								project timeline.
 							</p>
 							<span class="image fit"><img src="images/bl_gameplay.gif" alt="" /></span>
 							<h2>Gameplay</h2>
-							<p>The player first must choose a name to go by in order to get a leaderboard entry, if they do not choose a name they are "anonymous". The player is then imediatly
-								thrusted into the first wave of enemies, in order to survive the player must dodge their flurry of bullets and fire back. The player is not completely helpless through
-								as they have abilities and a secondary weapon to help them. Every eight waves the game starts upping the difficulty, after wave sixteen you are on the hardest difficulty
-								and from there on you must try to survive an endless horde. This game is not easy but a verteran bullet hell player might get high into the score system.
+							<p> The gameplay for the game features 3 levels each with unique challenges. These challenges along with two different bosses add varience 
+								to the levels. Top down combat is crutial to the game's identity as a bullet hell. Swappable weapons and abilities are offered to the
+								player to encourage gameplay diversity. A dynamic dialogue system helps to convey character and life into the narritive.
+								
 							</p>
 							<h2>Implemented Features</h2>
 							<div class="table-wrapper">
@@ -65,28 +67,44 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td>High Score System</td>
-											<td>The high score is persistant throughout the playthough utalizing Unity's Scriptable Object System. 
+											<td>Objective System</td>
+											<td> Objectives for each level were made to give varience to each level. These objectives include kill all enemies, survive
+												for a set amount of time, and kill enemies in a set amount of time. The levels follow a linear progression based on 
+												this system.
 											</td>
 											<td></td>
 										</tr>
 										<tr>
-											<td>Plyer Abilities</td>
-											<td>The player is given a small set of unique abilites. An Evade that gives the player invunerability frames and extra speed and a Bubble Shield that also
-												make the player invunerable for a more extended period of time. Each ability has a cooldown timer that communicates with the player's HUD to let the player
-												know when they can use it again.
+											<td>Wave System</td>
+											<td> Dynamic wave system that chooses from a pool of waves unique to each level.
+											</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Player Abilities</td>
+											<td>The player is given a small set of unique abilites. A Phase Shift ability gives the player invunerability frames for a set amount of time 
+												and a Pulse Bomb explodes and does damage over a large area. Each ability has a cooldown timer that communicates with the player's HUD to let the player
+												know when they can use it again. They also have a use counter that limits the amount of times it can be used.
 											</td>
 										</tr>
 										<tr>
-											<td>Assortment of Unique Enemies</td>
-											<td>The game features four unique enemy types. A standard enemy that flys back and fourth across the screen and shoots bullets at a semi random rate,
-												a radial enemy that shoots bullets in eight different directions, a bomber enemy that periodically drops timed bombs, and a homing enemy that tracks
-												the player's position and shoots bullets at the players direction.
+											<td>Player Weapon Arsenal</td>
+											<td> The player has a variety of weapons they can use throughout the game. Each weapon can be unlocked as they complete levels.
+												 A pistol that has a slow fire rate, a laser weapon that can charge for higher amounts of damage and go through entities, and 
+												 a gatling weapon that fires very fast and has a cooldown for balance.
 											</td>
 										</tr>
 										<tr>
-											<td>Dynamic Wave System</td>
-											<td> The game reacts to the player's wave count. Every ten waves the game will intraduce new enemies and make harder varients of basic enemies to up the challenge.
+											<td>Boss Fights</td>
+											<td> Game features two challenging boss fights. For the first boss the player needs to shoot shield generators to destroy a large
+												 bubble sheild. This boss can summon minions to aid in the battle. The second boss has a flury of attacks including a burst atttack,
+												 that send out a burst of bullets in a fan, and a sweep attack where the boss goes back and forth continuously firing bullets rapidly.								
+											</td>
+										</tr>
+										<tr>
+											<td>Dialogue System</td>
+											<td> Full and complete dialogue system with portrates of characters. Text is animated with a typewriter effect.
+												Over 8 cutscenes with dialogue and dialogue plays during gameplay.
 											</td>
 										</tr>
 										<tr>
@@ -98,7 +116,7 @@
 										</tr>
 										<tr>
 											<td>Music and Sound</td>
-											<td>Music and Sound made by a very talented member of the club, Edrick Fajardo. (efajard4@asu.edu)</span></a></td>
+											<td>Music and Sound made by very talented sound members from the club.</span></a></td>
 										</tr>
 									</tbody>
 								</table>
