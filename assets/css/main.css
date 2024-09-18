@@ -3460,7 +3460,7 @@ input, select, textarea {
 
 					#header > nav > ul > li a {
 						border: 0;
-						color: lightsk;		/* Page Tab Text Color */
+						color: steelblue;			/* Page Tab Text Color */
 						display: inline-block;
 						font-size: 0.6em;
 						font-weight: bold;
@@ -3789,7 +3789,7 @@ input, select, textarea {
 			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 			border: 0;
-			color: lightskyblue;		/* Side Bar Text Inactive Color */
+			color: steelblue;		/* Side Bar Text Inactive Color */
 			display: block;
 			font-size: 0.6em;
 			font-weight: bold;
@@ -3830,11 +3830,11 @@ input, select, textarea {
 			}
 
 			#sidebar nav a:hover {
-				color: rgba(255, 255, 255, 0.55);
+				color: #0ce6f2;		/* Side Bar Text Hover Color */
 			}
 
 			#sidebar nav a.active {
-				color: #ffffff;
+				color: #ffffff;				/* Side Bar Text Active Color */
 			}
 
 				#sidebar nav a.active:after {

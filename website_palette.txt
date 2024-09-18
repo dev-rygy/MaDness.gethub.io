@@ -5,7 +5,6 @@ Main colors used:
 	Light Cyan: 		lightcyan
 	Steel Blue: 		steelblue
 	Light Steel Blue: 	lightsteelblue
-	Light Sky Blue:		lightskyblue
 	Light Blue: 		#0098db
 	Blue: 				#1e579c
 	Dark Blue: 			#203562
