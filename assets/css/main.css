@@ -171,10 +171,10 @@ input, select, textarea {
 		text-decoration: none;
 	}
 
-		a:hover {								/* Link Hover Color */
-			border-bottom-color: transparent;
-			color: #0ce6f2;
-		}
+	a:hover {								/* Link Hover Color */
+		border-bottom-color: transparent;
+		color: #0ce6f2;
+	}
 
 	strong, b {
 		color: #ffffff;
@@ -3180,7 +3180,7 @@ input, select, textarea {
 
 		}
 
-/* Table */
+/* Feature Table */
 
 	.table-wrapper {
 		-webkit-overflow-scrolling: touch;
@@ -3199,7 +3199,7 @@ input, select, textarea {
 		}
 
 			table tbody tr:nth-child(2n + 1) {
-				background-color: rgba(255, 255, 255, 0.05);	/* Table Background Color */
+				background-color: #252446;	/* Table Background Color */
 			}
 
 		table td {
