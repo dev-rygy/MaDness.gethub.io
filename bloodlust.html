@@ -23,7 +23,7 @@
 						<li><a href="rogue_nebula.html">Rogue Nebula</a></li>
 						<li><a href="future_scape.html">Future Scape</a></li>
 						<li><a href="unstable_star.html">Unstable Star</a></li>
-						<li><a href="hells_kitchen.html">The Devil's Diner</a></li>
+						<li><a href="the_devils_diner.html">The Devil's Diner</a></li>
 						<li><a href="bloodlust.html" class="active">Bloodlust</a></li>
 						<li><a href="star_raid.html">Star Raid</a></li>
 						<li><a href="fishy_business.html">Fishy Business</a></li>
@@ -39,20 +39,26 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
+							<!-- Project Title -->
 							<h1 class="major">Bloodlust</h1>
-							<!-- <span class="image fit"><img src="images/pic16.jpg" alt="" /></span> -->
 							<span class="image fit"><img src="images/blood_gameplay_2.gif" alt="" /></span>
-							<h2>Summary</h2>
-							<p>Bloodlust is a game I made with one of my friends for Ludum Dare 49. Ludum Dare is a contest where you are given 72 hours to create a small game based
-								on a particular theme. The theme choosen for this jam was "Prevent the Inevitable" and it was also close to Halloween so we decided to make a game
-								about a vampire who must feast on his victims to survive.
-							</p>
 							<span class="image fit"><img src="images/blood_gameplay.gif" alt="" /></span>
-							<h2>Gameplay</h2>
-							<p>The player starts with a full blood count which starts ticking at the beginning of the game. Once the count reaches zero the player dies. Watch the guard's
-								scheduals to know when the best time to strike will be. But be wary if you let a victim get away they will alert the nearest guard. Some NPCs have weapons
-								which the player can pick up and use to their advantage. The aim of the game is to survive and get as many kills as possible.
+							<!-- Project Summary -->
+							<h2>Summary</h2>
+							<p>
+								<em>Bloodlust</em>  is a game I created with a colleague for <a href="https://ldjam.com/events/ludum-dare/49">Ludum Dare Game Jam #49</a>.
+								Ludum Dare is one of the largest game jams in the world that challenges participants to create a complete game in 72 hours based off of 
+								a particular theme. The theme was "Prevent the Inevitable," and given the timing near Halloween, we designed a game about a vampire who 
+								must feast on victims to survive.
 							</p>
+							<!-- Gameplay Description -->
+							<h2>Gameplay</h2>
+							<p>
+								The player starts with a full blood count that decreases over time. Once it reaches zero, the player dies. Study victim's schedules closely
+								to find the best time to strike, but be cautious—if a victim escapes, they'll alert the nearby guards. The player can take advantage of the weapons
+								some NPCs drop to kill more effectively. The aim of the game is to survive and accrue as many kills as possible.
+							</p>
+							<!-- Feature List -->
 							<h2>Implemented Features</h2>
 							<div class="table-wrapper">
 								<table>
@@ -65,31 +71,31 @@
 									<tbody>
 										<tr>
 											<td>Day and Night Cycles</td>
-											<td>Day and night cycle that affects NPC shcedualing and player vision. 
-											</td>
+											<td>The time scale of the game can effect the day/night cycle of the game. This in turn will affects NPC awareness during certain times.</td>
 											<td></td>
 										</tr>
 										<tr>
-											<td>Dynamic NPC Scheduals</td>
-											<td>Each NPC is given a specific schedual based on delta time and a waypoint system.</td>
+											<td>Dynamic NPC Schedules</td>
+											<td>NPCs follow specific schedules based on delta time and utalize pathfinding.</td>
 										</tr>
 										<tr>
-											<td>Inventory System</td>
-											<td>An inventory system determines what type of weapon the player has.</td>
-										</tr>
-										<tr>
-											<td>AI Reaction Based Behavior</td>
-											<td>NPCs react to the player's attack using a suspician system. This makes them wary of the player if he has attacked them
-												or to go to a guard for help.
+											<td>Dynamic NPC Behavior</td>
+											<td>
+												NPCs react to the player's attacks through a suspicion system, becoming wary or seeking help from guards.
 											</td>
 										</tr>
 										<tr>
+											<td>Inventory System</td>
+											<td>An inventory system determines what the player has in their arsonal at a given time.</td>
+										</tr>
+										<tr>
 											<td>Music and Sound</td>
-											<td>Sounds found from free website and mixed. <a href="https://madness1184.itch.io/hells-kitchen">https://opengameart.org/</span></a></td>
+											<td>Sounds found from a free website and mixed. <a href="https://madness1184.itch.io/hells-kitchen">https://opengameart.org/</span></a></td>
 										</tr>
 									</tbody>
 								</table>
 							<br>
+							<!-- Links -->
 							<ul class="icons">
 								<li>Link to Prototype - <a href="https://madcolors-entertainment.itch.io/bloodlust">https://madcolors-entertainment.itch.io/bloodlust</span></a></li>
 								<li>Repository Link - <a href="https://github.com/MaDness1184/Bloodlust-LDGJ-Version" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
@@ -103,7 +109,7 @@
 			<footer id="footer" class="wrapper alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>Website Template By: <a href="http://html5up.net">HTML5 UP</a></li>
+						<!-- <li>Website Template By: <a href="http://html5up.net">HTML5 UP</a></li> -->
 					</ul>
 				</div>
 			</footer>
