@@ -4,10 +4,20 @@
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	
 	Main colors used:
-	Dark Blue #131975
-	Medium Blue #2b4cb5
-	Light Blue #4389d9
+	White: 				#ffffff
+	White Smoke: 		whitesmoke
+	Cyan: 				#0ce6f2
+	Light Cyan: 		lightcyan
+	Steel Blue: 		steelblue
+	Light Steel Blue: 	lightsteelblue
+	Light Blue: 		#0098db
+	Blue: 				#1e579c
+	Dark Blue: 			#203562
+	Grey Blue:			#252446
+	Purple Blue	 		#201533
+
 */
 
 html, body, div, span, applet, object,
@@ -101,8 +111,9 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
+	/* Page Background Color */
 	body {
-		background: #2b4cb5;
+		background: #203562;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -119,7 +130,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.55);
+		color: lightsteelblue;						/* List Text */
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
@@ -155,14 +166,14 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		transition: color 0.2s ease, border-bottom-color 0.2s ease;
-		border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
-		color: whitesmoke;
+		border-bottom: dotted 1px lightsteelblue;					/* Link Underline Color */
+		color: lightcyan; 							/* Hyper Link Color */
 		text-decoration: none;
 	}
 
-		a:hover {
+		a:hover {								/* Link Hover Color */
 			border-bottom-color: transparent;
-			color: #ffffff;
+			color: #0ce6f2;
 		}
 
 	strong, b {
@@ -176,9 +187,10 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
+		color: lightsteelblue;	/* Basic Paragraph Text */
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, h5, h6 {	/* Basic Header Text */
 		color: #ffffff;
 		font-weight: bold;
 		line-height: 1.5;
@@ -199,12 +211,12 @@ input, select, textarea {
 			position: relative;
 			padding-bottom: 0.35em;
 		}
-
+									/* Project Title Underline In Page */
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #2b4cb5, #2b4cb5);
-				background-image: -webkit-linear-gradient(to right, #2b4cb5, #2b4cb5);
-				background-image: -ms-linear-gradient(to right, #2b4cb5, #2b4cb5);
-				background-image: linear-gradient(to right, #2b4cb5, #2b4cb5);
+				background-image: -moz-linear-gradient(to right, #0ce6f2, #ffffff);
+				background-image: -webkit-linear-gradient(to right, #0ce6f2, #ffffff);
+				background-image: -ms-linear-gradient(to right, #0ce6f2, #ffffff);
+				background-image: linear-gradient(to right, #0ce6f2, #ffffff);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -279,18 +291,20 @@ input, select, textarea {
 	}
 
 	blockquote {
-		border-left: solid 4px rgba(255, 255, 255, 0.15);
+		border-left: solid 4px lightsteelblue;	/* Blockquote Side Line Color */
 		font-style: italic;
 		margin: 0 0 2em 0;
 		padding: 0.5em 0 0.5em 2em;
 	}
 
+	/* Code Block Colors */
 	code {
-		background: rgba(255, 255, 255, 0.05);
-		border-radius: 0.25em;
-		border: solid 1px rgba(255, 255, 255, 0.15);
+		background: #1e579c;	/* Background Color */
+		border-radius: 0.3em;
+		border: solid 1px #0ce6f2;	/* Boarder Color */
 		font-family: "Courier New", monospace;
 		font-size: 0.9em;
+		color: #ffffff;		/* Code Color */
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
 	}
@@ -311,7 +325,7 @@ input, select, textarea {
 
 	hr {
 		border: 0;
-		border-bottom: solid 1px rgba(255, 255, 255, 0.15);
+		border-bottom: solid 1px lightcyan;		/* Line Separator Color */
 		margin: 2em 0;
 	}
 
@@ -1803,7 +1817,7 @@ input, select, textarea {
 
 	.box {
 		border-radius: 0.25em;
-		border: solid 1px rgba(255, 255, 255, 0.15);
+		border: solid 1px #252446; 	/* Some color to do with images? */
 		margin-bottom: 2em;
 		padding: 1.5em;
 	}
@@ -1820,7 +1834,7 @@ input, select, textarea {
 			padding: 0;
 		}
 
-/* Button */
+/*#region Button*/
 
 	input[type="submit"],
 	input[type="reset"],
@@ -1837,9 +1851,9 @@ input, select, textarea {
 		transition: border-color 0.2s ease;
 		background-color: transparent;
 		border: solid 1px !important;
-		border-color: rgba(255, 255, 255, 0.15) !important;
+		border-color: #0098db !important;	/* Boarder Color */
 		border-radius: 3em;
-		color: #ffffff !important;
+		color: #0ce6f2 !important;		/* Text Color */
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.6em;
@@ -1917,9 +1931,9 @@ input, select, textarea {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		button.primary,
-		.button.primary {
-			background-color: #ffffff;
-			color: #131975 !important;
+		.button.primary {		/* Alt. button */
+			background-color: #0ce6f2;
+			color: #203562 !important;
 		}
 
 			input[type="submit"].primary:after,
@@ -1949,7 +1963,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border-color: rgba(255, 255, 255, 0.55) !important;
+			border-color: #ffffff !important;	/* Button Boarder Hover Color */
+			color: #ffffff !important;		/* Text Color */
 		}
 
 			input[type="submit"]:hover:after,
@@ -1980,7 +1995,7 @@ input, select, textarea {
 					opacity: 0.1;
 				}
 
-/* Features */
+/* Home Page Experience Table */
 
 	.features {
 		display: -moz-flex;
@@ -1992,15 +2007,15 @@ input, select, textarea {
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		border-radius: 0.25em;
-		border: solid 1px rgba(255, 255, 255, 0.15);
-		background: rgba(255, 255, 255, 0.05);
+		border: solid 1px #0ce6f2;				/* Experience Table Boarder Color */
+		background: rgba(255, 255, 255, 0.05);		/* Experience Table Background Color */
 		margin: 0 0 2em 0;
 	}
 
 		.features section {
 			padding: 3.5em 3em 1em 7em ;
 			width: 50%;
-			border-top: solid 1px rgba(255, 255, 255, 0.15);
+			border-top: solid 1px #0ce6f2;		/* Experience Table Hor. Crossection Color */
 			position: relative;
 		}
 
@@ -2008,8 +2023,8 @@ input, select, textarea {
 				border-top-width: 0;
 			}
 
-			.features section:nth-child(2n) {
-				border-left: solid 1px rgba(255, 255, 255, 0.15);
+			.features section:nth-child(2n) {		
+				border-left: solid 1px #0ce6f2;		/* Experience Table Vert. Crossection Color */
 			}
 
 			.features section .icon {
@@ -2307,6 +2322,7 @@ input, select, textarea {
 		font-size: 1.1em;
 	}
 
+	/* Insert Text Area */
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
@@ -2317,10 +2333,10 @@ input, select, textarea {
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		background: rgba(255, 255, 255, 0.05);
+		background: #1e579c; /* Text Area Background Color */
 		border-radius: 0.25em;
 		border: none;
-		border: solid 1px rgba(255, 255, 255, 0.15);
+		border: solid 1px #0ce6f2; /* Text Area Boarder Color */
 		color: inherit;
 		display: block;
 		outline: 0;
@@ -2343,7 +2359,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		input[type="tel"]:focus,
 		select:focus,
-		textarea:focus {
+		textarea:focus {				/* Text Area Interact Color */
 			border-color: #ffffff;
 			box-shadow: 0 0 0 1px #ffffff;
 		}
@@ -2357,10 +2373,10 @@ input, select, textarea {
 		padding-right: 2.75em;
 		text-overflow: ellipsis;
 	}
-
+		/* Dropdown Menu Colors */
 		select option {
 			color: #ffffff;
-			background: #312450;
+			background: #1e579c;
 		}
 
 		select:focus::-ms-value {
@@ -2403,7 +2419,7 @@ input, select, textarea {
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: rgba(255, 255, 255, 0.55);
+			color: lightsteelblue;		/* Checkbox Text Color */
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -2446,9 +2462,9 @@ input, select, textarea {
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: #ffffff;
+			background: #0ce6f2;			/* Checkbox Colors */
 			border-color: #ffffff;
-			color: #00a6e8;
+			color: #ffffff;
 			content: '\f00c';
 		}
 
@@ -2527,9 +2543,9 @@ input, select, textarea {
 			width: 2.5em;
 			height: 2.5em;
 			display: block;
-			background: #ffffff;
+			background: #ffffff;		/* About Me Icon Colors (outer) */
 			border-radius: 100%;
-			color: #131975;
+			color: #1e579c;
 			text-align: center;
 			line-height: 2.5em;
 			margin: 0 0 1.3em 0;
@@ -2540,27 +2556,27 @@ input, select, textarea {
 			}
 
 				.wrapper.style1 .icon.major:before {
-					color: #2b4cb5;
+					color: #ffffff;
 				}
 
 				.wrapper.style1-alt .icon.major:before {
-					color: #2b4cb5;
+					color: #ffffff;
 				}
 
 				.wrapper.style2 .icon.major:before {
-					color: #2b4cb5;
+					color: #ffffff;
 				}
 
 				.wrapper.style2-alt .icon.major:before {
-					color: #2b4cb5;
+					color: #ffffff;
 				}
 
-				.wrapper.style3 .icon.major:before {
-					color: #4389d9;
+				.wrapper.style3 .icon.major:before {		/* About Me Icon Colors (inner) */
+					color: #1e579c;
 				}
 
 				.wrapper.style3-alt .icon.major:before {
-					color: #4389d9;
+					color: #ffffff;
 				}
 
 /* Image */
@@ -2871,7 +2887,7 @@ input, select, textarea {
 	}
 
 	header p {
-		color: rgba(255, 255, 255, 0.35);
+		color: lightsteelblue;		/* Header Paragraph Color */
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -3026,7 +3042,7 @@ input, select, textarea {
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
 				transition: opacity 1s ease;
-				background: rgba(19, 25, 80, 0.9);
+				background: #0098db;				/* Home Page Project Reveal Color */
 				content: '';
 				display: block;
 				height: 100%;
@@ -3052,7 +3068,7 @@ input, select, textarea {
 			-ms-justify-content: center;
 			justify-content: center;
 			width: 50em;
-			-ms-flex: 1;
+			-ms-flex: 1;		/*A problem*/
 		}
 
 			.spotlights > section > .content > .inner {
@@ -3067,11 +3083,40 @@ input, select, textarea {
 				opacity: 1;
 			}
 
+														/* Home Page Project Description Background Colors */
+		.spotlights > section:nth-child(1) {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+
 		.spotlights > section:nth-child(2) {
 			background-color: rgba(0, 0, 0, 0.05);
 		}
 
 		.spotlights > section:nth-child(3) {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+
+		.spotlights > section:nth-child(4) {
+			background-color: rgba(0, 0, 0, 0.05);
+		}
+
+		.spotlights > section:nth-child(5) {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+
+		.spotlights > section:nth-child(6) {
+			background-color: rgba(0, 0, 0, 0.05);
+		}
+
+		.spotlights > section:nth-child(7) {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+
+		.spotlights > section:nth-child(8) {
+			background-color: rgba(0, 0, 0, 0.05);
+		}
+
+		.spotlights > section:nth-child(9) {
 			background-color: rgba(0, 0, 0, 0.1);
 		}
 
@@ -3148,13 +3193,13 @@ input, select, textarea {
 	}
 
 		table tbody tr {
-			border: solid 1px rgba(255, 255, 255, 0.15);
+			border: solid 1px rgba(255, 255, 255, 0.15);		/* Table Boarder Color */
 			border-left: 0;
 			border-right: 0;
 		}
 
 			table tbody tr:nth-child(2n + 1) {
-				background-color: rgba(255, 255, 255, 0.05);
+				background-color: rgba(255, 255, 255, 0.05);	/* Table Background Color */
 			}
 
 		table td {
@@ -3162,7 +3207,7 @@ input, select, textarea {
 		}
 
 		table th {
-			color: #ffffff;
+			color: lightcyan;
 			font-size: 1em;
 			font-weight: bold;
 			padding: 0 0.75em 0.75em 0.75em;
@@ -3170,11 +3215,11 @@ input, select, textarea {
 		}
 
 		table thead {
-			border-bottom: solid 2px rgba(255, 255, 255, 0.15);
+			border-bottom: solid 2px rgba(255, 255, 255, 0.15);	/* Table Boarder Color */
 		}
 
 		table tfoot {
-			border-top: solid 2px rgba(255, 255, 255, 0.15);
+			border-top: solid 2px rgba(255, 255, 255, 0.15);		/* Table Boarder Color */
 		}
 
 		table.alt {
@@ -3239,32 +3284,33 @@ input, select, textarea {
 
 			}
 
+		/* Home Page Colors */
 		.wrapper.alt {
-			background-color: #131975; /* no clue */
+			background-color: #201533; /* Page Bot Tab Color */
 		}
 
 		.wrapper.style1 {
-			background-color: #2b4cb5; /* Intro */
+			background-color: #203562; /* Intro Background Color */
 		}
 
 		.wrapper.style1-alt {
-			background-color: #131975; /* Bottom tab */
+			background-color: #201533; /* Bottom Tab Color */
 		}
 
 		.wrapper.style2 {
-			background-color: #2b4cb5; /* projects section */
+			background-color: #203562; /* Projects Section Color */
 		}
 
 		.wrapper.style2-alt {
-			background-color: #2b4cb5; /* no clue */
+			background-color: #201533; /* no clue */
 		}
 
 		.wrapper.style3 {
-			background-color: #4389d9; /* About Me */
+			background-color: #1e579c; /* About Me Background Color */
 		}
 
 		.wrapper.style3-alt {
-			background-color: #4389d9; /* no clue */
+			background-color: #201533; /* no clue */
 		}
 
 		.wrapper.fullscreen {
@@ -3375,14 +3421,14 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #131975;
+		background-color: #201533;		/* Page Tab Color */	
 		cursor: default;
 		padding: 1.75em 2em;
 	}
 
 		#header > .title {
 			border: 0;
-			color: #ffffff;
+			color: #ffffff;		/* Page Ryan's Portfolio Color */
 			display: block;
 			font-size: 1.25em;
 			font-weight: bold;
@@ -3414,7 +3460,7 @@ input, select, textarea {
 
 					#header > nav > ul > li a {
 						border: 0;
-						color: rgba(255, 255, 255, 0.35);
+						color: lightsk;		/* Page Tab Text Color */
 						display: inline-block;
 						font-size: 0.6em;
 						font-weight: bold;
@@ -3422,12 +3468,12 @@ input, select, textarea {
 						text-transform: uppercase;
 					}
 
-						#header > nav > ul > li a:hover {
-							color: rgba(255, 255, 255, 0.55);
+						#header > nav > ul > li a:hover {	
+							color: #0ce6f2;				/* Page Tab Text Interact Color */
 						}
 
 						#header > nav > ul > li a.active {
-							color: #ffffff;
+							color: #ffffff;				/* Page Tab Text Active Color */
 						}
 
 		@media screen and (max-width: 736px) {
@@ -3508,6 +3554,7 @@ input, select, textarea {
 
 		}
 
+								/* Footer Colors */
 	#footer > .inner a {
 		border-bottom-color: rgba(255, 255, 255, 0.15);
 	}
@@ -3525,11 +3572,11 @@ input, select, textarea {
 		margin: 0 auto;
 	}
 
-/* Sidebar */
+/* Side Bar */
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #131975; /* Sidebar */
+		background: #201533;				/* Home Page Side Bar Color */
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3742,7 +3789,7 @@ input, select, textarea {
 			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 			border: 0;
-			color: rgba(255, 255, 255, 0.35);
+			color: lightskyblue;		/* Side Bar Text Inactive Color */
 			display: block;
 			font-size: 0.6em;
 			font-weight: bold;
@@ -3765,15 +3812,16 @@ input, select, textarea {
 				width: 100%;
 			}
 
+												/* Home Page Side Bar Nav Colors */
 			#sidebar nav a:before {
-				background: #131975;
+				background: #1e579c;	/* Background */
 			}
-
-			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #2b4cb5, #4389d9);
-				background-image: -webkit-linear-gradient(to right, #2b4cb5, #4389d9);
-				background-image: -ms-linear-gradient(to right, #2b4cb5, #4389d9);
-				background-image: linear-gradient(to right, #2b4cb5, #4389d9);
+			
+			#sidebar nav a:after {				/* Active Colors */
+				background-image: -moz-linear-gradient(to right, #0ce6f2, #ffffff);
+				background-image: -webkit-linear-gradient(to right, #0ce6f2, #ffffff);
+				background-image: -ms-linear-gradient(to right, #0ce6f2, #ffffff);
+				background-image: linear-gradient(to right, #0ce6f2, #ffffff);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3862,7 +3910,7 @@ input, select, textarea {
 
 						#sidebar nav a:after {
 							background-image: none;
-							background-color: #4389d9;
+							background-color: #0098db;
 						}
 
 		}
