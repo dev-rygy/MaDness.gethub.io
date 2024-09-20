@@ -9,7 +9,7 @@
 		<title>Ryan Carpenter's Portfolio - Fishy Business</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />	<!-- css stylesheet -->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -25,9 +25,9 @@
 						<li><a href="unstable_star.html">Unstable Star</a></li>
 						<li><a href="the_devils_diner.html">The Devil's Diner</a></li>
 						<li><a href="bloodlust.html">Bloodlust</a></li>
-						<li><a href="star_raid.html">Star Raid</a></li>
+						<!-- <li><a href="star_raid.html">Star Raid</a></li> (archived) -->
 						<li><a href="fishy_business.html" class="active">Fishy Business</a></li>
-						<li><a href="soc.html">Spirit of Calamity</a></li>
+						<!-- <li><a href="soc.html">Spirit of Calamity</a></li> (archived) -->
 						<li><a href="other_pj.html">Smaller Projects</a></li>
 					</ul>
 				</nav>
@@ -39,23 +39,23 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
+							<!-- Game Widget -->
+							<iframe class="widget" frameborder="0" src="https://itch.io/embed/2405082?border_width=0&amp;bg_color=0098db&amp;fg_color=ffffff&amp;link_color=0ce6f2&amp;border_color=ffffff" width="550" height="165">
+								<a href="https://fishy-devs.itch.io/fishy-business">Fishy Business by Fishy Devs</a></iframe>
 							<h1 class="major">Fishy Business</h1>
 							<!-- <span class="image fit"><img src="images/pic16.jpg" alt="" /></span> -->
 							<span class="image fit"><img src="images/space_gameplay_2.gif" alt="" /></span>
 							<h2>Summary</h2>
-							<p>Fishy Business was a group project created for a game developement class using the <a href="https://gamemaker.io/en">Gamemaker</a> engine. The main focus of the project was to simulate an environment and 
-								process similar to working in a professional studio. We had deadlines, conducted regular check-ins, peer evaluations, created design documentation, and marketing. As the group leader and gameplay 
-								programmer, I played a pivotal role in bringing this project to life. A snapshot of this project can be found on ou A snapshot of this project can be found on our 
-								<a href="https://fishy-devs.itch.io/fishy-business">itch.io</a> page.</p>
+							<p> <em>Fishy Business</em> was a group project created for a game development class using the <a href="https://gamemaker.io/en">Gamemaker</a> engine. The project aimed to 
+								simulate a professional studio environment, complete with deadlines, regular check-ins, peer evaluations, design documentation, and marketing. As the group leader and gameplay 
+								programmer, I played a pivotal role in bringing the project to life. A snapshot of the project can be found on our <a href="https://fishy-devs.itch.io/fishy-business">itch.io</a> page.</p>
 							</p>
 							<span class="image fit"><img src="images/space_gameplay.gif" alt="" /></span>
 							<h2>Gameplay</h2>
-							<p>Fishy Business is a lively fishing game in which the player can freely fish in a small lake environment, sell their catches, and buy new gear.
-								The player starts in a place called the "Overworld" where they can traverse a small lake area. Here, the player can	interact with the lake to fish
-								and Fisher Frog to buy and sell gear. The player can buy and upgrade their rod to increase the occurance chance of fish (the chance that a more rare fish
-								will spawn), thier line to increase their tension meter (a meter that appears on the screen when the player is fighting a fish  ), and their bait to
-								raise bite chance (the chance that a fish will bite onto their rod). Each fish is unique and come with their own chances and value. The more rare the catch
-								the more valuable the fish is to sell. 
+							<p> <em>Fishy Business</em> is a lively fishing game in which the player can freely explore, fish, sell their catches, and buy new gear.
+								Starting in the "overworld", players explore a small lake area where they can fish and interact with <em>Fisher Frog</em> to sell and buy new gear.
+								Players can upgrade thier rod to increase the likelihood of catching rarer fish, improve their line control tension easier, and by using better bait 
+								to raise fish bite rate. Each fish is unique, with its own rarity and value—the rarer the fish, the more valuable it is to sell.
 							</p>
 							<h2>Implemented Features</h2>
 							<div class="table-wrapper">
@@ -69,41 +69,45 @@
 									<tbody>
 										<tr>
 											<td>Functional UI</td>
-											<td>UI buttons in the menu and games to navigate through the space aswell as guides to help the player learn the controls.
+											<td>Intuitive UI for navigating menus and in-game controls.
 											</td>
 											<td></td>
 										</tr>
 										<tr>
 											<td>Overworld</td>
-											<td>Game divided into two separate gameplay areas. An overworld, where the player can explore, access their inventory, and
-												shop. The minigame, where the player enters a fun gameplay loop for catching fish.
+											<td>
+												The game is divided into two separate gameplay areas. An "overworld" for exploration, inventory management, and shopping,
+												and a minigame that offers a fun gameplay loop for catching fish.
 											</td>
 										</tr>
 										<tr>
 											<td>Fishing Gameplay</td>
-											<td>Gameplay functionality for rod casting, line reeling, and catching.</td>
+											<td>
+												Mechanics for rod casting, line reeling, and catching fish. Features fish rarity, rod animations, a tension meter for reeling,
+												and fish AI.
+											</td>
 										</tr>
 										<tr>
 											<td>Inventory System</td>
-											<td>Modular inventory system that supports equip items, swapping, organizing, selling, and fish catching.</td>
+											<td>Modular <em>Minecraft-like<em> system for equipping, swapping, organizing, and selling items, as well as managing fish catches.</td>
 										</tr>
 										<tr>
 											<td>Special Fish Behavior</td>
-											<td>Individual fish bahavior that's effected by a set a states. A swim state where fish will swim back and fourth aimlessly around
-												the screen. A timid state where the fish slowly approaches the lure. A bite state where the fish thrashes violently on the bait.
+											<td>
+												Unique fish behaviors that influence swim speed, lure caution, and unique tension difficulty.
 											</td>
 										</tr>
 										<tr>
 											<td>Shop</td>
-											<td>The game features a shop where the player can transfer items to their inventory for a price.</td>
+											<td>A shop where players can purchase and add items to their inventory.</td>
 										</tr>
 										<tr>
 											<td>Custom Artwork</td>
-											<td>Tileset artwork and level design with the help of <a href="https://www.aseprite.org/">aseprite</span></a>, a sprite making software.
+											<td>Original tileset artwork and level design created using, <a href="https://www.aseprite.org/">Aseprite</span></a>, a pixel art software.
 											</td>
 										</tr>
 											<td>Music and Sound</td>
-											<td>Sounds found from free sources and mixed.</td>
+											<td>Sounds found off free websites and mixed.</td>
 										</tr>
 									</tbody>
 								</table>

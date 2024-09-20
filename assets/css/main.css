@@ -85,6 +85,41 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* Game Embed*/
+.embed
+{
+	background-color: #0098db;
+	border-radius: 15px;
+	border: 3px solid #0ce6f2;
+	position: relative;
+	top: 0;
+	left: 100;
+}
+
+/* Itch Widget */
+.widget					/* If the screen width is < 1280px then don't lock in the bottom left (mobile & tablet) */
+{
+	border-radius: 15px;
+	border: 3px solid #0ce6f2;
+	z-index: 1;
+}
+
+@media screen and (min-width: 1280px)	/* If the screen width is >= 1280px then don't lock in the bottom left (desktop) */
+{
+	.widget
+	{
+		border-radius: 15px;
+		border: 3px solid #0ce6f2;
+		z-index: 1;
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		margin-bottom: 20px;
+		margin-right: 20px;
+	}
+}
+
+
 /* Basic */
 
 	@-ms-viewport {
@@ -3927,7 +3962,7 @@ input, select, textarea {
 
 	#intro {
 		background-attachment: fixed;
-		background-image: url("images/intro.svg");
+		background-image: url("images/intro.svg"); 		/* Intro Photo */
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
