@@ -85,7 +85,7 @@ input, select, textarea {
 	appearance: none;
 }
 
-/* Game Embed*/
+/* Itch Game Embed*/
 .embed
 {
 	background-color: #0098db;
@@ -102,6 +102,16 @@ input, select, textarea {
 	border-radius: 15px;
 	border: 3px solid #0ce6f2;
 	z-index: 1;
+}
+
+/* YouTube Embed */
+.video
+{
+	background-color: #0098db;
+	border-radius: 10px;
+	border: 3px solid #0ce6f2;
+	position: relative;
+	left: 30%;
 }
 
 @media screen and (min-width: 1280px)	/* If the screen width is >= 1280px then don't lock in the bottom left (desktop) */
