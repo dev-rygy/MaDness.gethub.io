@@ -92,8 +92,26 @@ input, select, textarea {
 	border-radius: 15px;
 	border: 3px solid #0ce6f2;
 	position: relative;
-	top: 0;
-	left: 100;
+	left: 15%;
+}
+
+/* YouTube Embed */
+.video
+{
+	background-color: #0098db;
+	border-radius: 10px;
+	border: 3px solid #0ce6f2;
+}
+@media screen and (min-width: 1280px) {
+	/* YouTube Embed */
+	.video
+	{
+		background-color: #0098db;
+		border-radius: 10px;
+		border: 3px solid #0ce6f2;
+		position: relative;
+		left: 30%;
+	}
 }
 
 /* Itch Widget */
@@ -104,18 +122,9 @@ input, select, textarea {
 	z-index: 1;
 }
 
-/* YouTube Embed */
-.video
+@media screen and (min-width: 1280px)	/* If the screen width is >= 1280px then change the position of embeds */
 {
-	background-color: #0098db;
-	border-radius: 10px;
-	border: 3px solid #0ce6f2;
-	position: relative;
-	left: 30%;
-}
-
-@media screen and (min-width: 1280px)	/* If the screen width is >= 1280px then don't lock in the bottom left (desktop) */
-{
+	/* Itch Widget */
 	.widget
 	{
 		border-radius: 15px;
