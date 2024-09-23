@@ -147,11 +147,11 @@ input, select, textarea {
   display: inline-block;
   transition: background-color 0.6s ease;
 }
-
+/*
 .active, .dot:hover {
   background-color: #717171;
 }
-
+*/
 /* Fading animation */
 .fade {
   animation-name: fade;
@@ -295,29 +295,29 @@ padding: 10px;
 		line-height: 1.75;
 	}
 
-		@media screen and (max-width: 1680px) {
+	@media screen and (max-width: 1680px) {
 
-			body, input, select, textarea {
-				font-size: 13pt;
-			}
-
+		body, input, select, textarea {
+			font-size: 13pt;
 		}
 
-		@media screen and (max-width: 1280px) {
+	}
 
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
+	@media screen and (max-width: 1280px) {
 
+		body, input, select, textarea {
+			font-size: 12pt;
 		}
 
-		@media screen and (max-width: 360px) {
+	}
 
-			body, input, select, textarea {
-				font-size: 11pt;
-			}
+	@media screen and (max-width: 360px) {
 
+		body, input, select, textarea {
+			font-size: 11pt;
 		}
+
+	}
 
 	a {
 		-moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
@@ -355,39 +355,39 @@ padding: 10px;
 		margin: 0 0 0.5em 0;
 	}
 
-		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-			color: inherit;
-			text-decoration: none;
-		}
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+		color: inherit;
+		text-decoration: none;
+	}
 
 	h1 {
 		font-size: 2.75em;
 	}
 
-		h1.major {
-			margin: 0 0 1.3em 0;
-			position: relative;
-			padding-bottom: 0.35em;
-		}
+	h1.major {
+		margin: 0 0 1.3em 0;
+		position: relative;
+		padding-bottom: 0.35em;
+	}
 									/* Project Title Underline In Page */
-			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #0ce6f2, #ffffff);
-				background-image: -webkit-linear-gradient(to right, #0ce6f2, #ffffff);
-				background-image: -ms-linear-gradient(to right, #0ce6f2, #ffffff);
-				background-image: linear-gradient(to right, #0ce6f2, #ffffff);
-				-moz-transition: max-width 0.2s ease;
-				-webkit-transition: max-width 0.2s ease;
-				-ms-transition: max-width 0.2s ease;
-				transition: max-width 0.2s ease;
-				border-radius: 0.2em;
-				bottom: 0;
-				content: '';
-				height: 0.05em;
-				position: absolute;
-				right: 0;
-				width: 100%;
-			}
-
+	h1.major:after {
+		background-image: -moz-linear-gradient(to right, #0ce6f2, #ffffff);
+		background-image: -webkit-linear-gradient(to right, #0ce6f2, #ffffff);
+		background-image: -ms-linear-gradient(to right, #0ce6f2, #ffffff);
+		background-image: linear-gradient(to right, #0ce6f2, #ffffff);
+		-moz-transition: max-width 0.2s ease;
+		-webkit-transition: max-width 0.2s ease;
+		-ms-transition: max-width 0.2s ease;
+		transition: max-width 0.2s ease;
+		border-radius: 0.2em;
+		bottom: 0;
+		content: '';
+		height: 0.05em;
+		position: absolute;
+		right: 0;
+		width: 100%;
+	}
+			
 	h2 {
 		font-size: 1.75em;
 	}

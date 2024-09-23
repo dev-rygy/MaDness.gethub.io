@@ -1,4 +1,7 @@
-Main colors used:
+
+Slideshow: https://www.w3schools.com/howto/howto_js_slideshow.asp
+
+Website colors:
 	White: 				#ffffff
 	White Smoke: 		whitesmoke
 	Cyan: 				#0ce6f2
