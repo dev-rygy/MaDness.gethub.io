@@ -204,29 +204,44 @@ padding: 10px;
 }
 
 /* Itch Widget */
-.widget					/* If the screen width is < 1280px then don't lock in the bottom left (mobile & tablet) */
+.widget
 {
 	border-radius: 15px;
 	border: 3px solid #0ce6f2;
 	z-index: 1;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 20px;
+	margin-right: 20px;
 }
-
-@media screen and (min-width: 1280px)	/* If the screen width is >= 1280px then change the position of embeds */
+@media screen and (max-width: 1280px)
 {
 	/* Itch Widget */
 	.widget
 	{
-		border-radius: 15px;
-		border: 3px solid #0ce6f2;
-		z-index: 1;
-		position: fixed;
-		bottom: 0;
-		right: 0;
-		margin-bottom: 20px;
-		margin-right: 20px;
+		display: none;
 	}
 }
 
+.smallWidget
+{
+	border-radius: 15px;
+	border: 3px solid #0ce6f2;
+	z-index: 1;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+@media screen and (min-width: 1280px)
+{
+	.smallWidget
+	{
+		display: none;
+	}
+}
 
 /* Basic */
 
