@@ -1,7 +1,7 @@
 
 Slideshow: https://www.w3schools.com/howto/howto_js_slideshow.asp
 
-Website colors:
+Color Palette:
 	White: 				#ffffff
 	White Smoke: 		whitesmoke
 	Cyan: 				#0ce6f2
@@ -15,3 +15,7 @@ Website colors:
 	Purple Blue	 		#201533
 	
 https://lospec.com/palette-list/eulbink
+
+Fonts:
+	Font Awesome 5 Free
+	Font Awesome 5 Brands
