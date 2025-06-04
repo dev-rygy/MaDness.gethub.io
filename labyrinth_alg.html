@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Ryan Carpenter's Portfolio - Rogue Nebula</title>
+		<title>Ryan Carpenter's Portfolio - Labyrinth Procedural Generation Algorithm</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />	<!-- css stylesheet -->
@@ -19,13 +19,14 @@
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="rogue_nebula.html" class="active">Rogue Nebula</a></li>
+						<li><a href="rogue_nebula.html" class="active">Labyrinth Algorithm</a></li>
+						<li><a href="rogue_nebula.html">Rogue Nebula</a></li>
 						<li><a href="future_scape.html">Future Scape</a></li>
 						<li><a href="unstable_star.html">Unstable Star</a></li>
 						<li><a href="the_devils_diner.html">The Devil's Diner</a></li>
 						<li><a href="bloodlust.html">Bloodlust</a></li>
 						<!-- <li><a href="star_raid.html">Star Raid</a></li> (archived) -->
-						<li><a href="fishy_business.html">Fishy Business</a></li>
+						<!-- <li><a href="fishy_business.html">Fishy Business</a></li> (archived) -->
 						<!-- <li><a href="soc.html">Spirit of Calamity</a></li> (archived) -->
 						<li><a href="other_pj.html">Smaller Projects</a></li>
 					</ul>
@@ -39,7 +40,7 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<!-- Project Title -->
-							<h1 class="major">Rogue Nebula</h1>
+							<h1 class="major">Labyrinth Procedural Generation Algorithm</h1>
 							<!-- Game Embed -->
 							<iframe class="embed" frameborder="0" src="https://itch.io/embed-upload/11536257?color=08031a" allowfullscreen="" width="1000" height="700"><a href="https://heatwave-studios.itch.io/rogue-nebula">Play Rogue Nebula on itch.io</a></iframe>
 							<!-- Big Game Widget -->
@@ -51,18 +52,12 @@
 							<!-- Project Summary -->
 							<h2>Summary</h2>
 							<p> 
-								Developed during the summer session of the <a href="https://asu.campuslabs.com/engage/organization/vgdc">Video Game Development Club</a>, <em>Rogue Nebula</em> challenges players to survive endless 
-								waves of enemies while aiming for a high score. Heavily inspired by classic arcade titles like <em>Galaga</em>, <em>Defender (1981)</em>, and <em>Space Invaders</em>, the game features a scrolling 3D 
-								environment, reactive UI, vibrant special effects, and diverse enemy behaviors.
+								
 							</p>
 							<!-- Gameplay Description -->
 							<h2>Gameplay</h2>
 							<p> 
-								The player begins by entering their name for a leaderboard entry; if a name is not selected, they are labeled "anonymous." When start is pressed the player is thrust into
-								battle immediately as endless waves of enemies barrage the screen. To survive, players must dodge incoming projectiles and retaliate with the weapons in their arsenal. To aid survival, players 
-								can use special abilities and select a wide array of weapons. Every eight waves, the difficulty increases, with the hardest level starting after wave sixteen. Enemies will 
-								continue to scale with the difficulty keeping the game a challenging and rewarding bullet-hell experience. High scores will be displayed for other players who
-								open the game.
+								
 							</p>
 
 							<!-- Slideshow -->
@@ -90,7 +85,7 @@
 							</div>
 							<br>
 							
-							<!-- Movement Script -->
+							<!-- Image Movement Script -->
 							<script>
 								let slideIndex = 1;
 								showSlides(slideIndex);
@@ -134,59 +129,54 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td>High Score System</td>
+											<td>Blueprint System</td>
 											<td>
-												The high score persists across playthroughs using Unity's Scriptable Object System and a JSON save format. 
-											</td>
-											<td></td>
-										</tr>
-										<tr>
-											<td>Player Abilities</td>
-											<td>
-												The player is given a small set of unique abilities. Players can use an "Evade" ability, providing brief 
-												invulnerability and extra speed, and the "Bubble Shield," granting extended invulnerability. Each ability 
-												has a cooldown timer displayed on the HUD that communicates when abilities will be available again.
+												
 											</td>
 										</tr>
 										<tr>
-											<td>Enemy Variety</td>
+											<td>Room Parser</td>
 											<td>
-												The game includes four enemy types: a basic enemy type that flys back and forth, shooting periodically, radial enemies 
-												that fire bullets in all directions, bomber enemies that drop fused bombs, and homing enemies that track and shoot at the player’s position.
+												
 											</td>
 										</tr>
 										<tr>
-											<td>Enemy Varients</td>
+											<td>Delaunay Triangulation</td>
 											<td>
-												The game features four unique enemy types as well as 3 types of varients for them. Each varient of a type of enemy has an increased attack speed,
-												movement speed, health, and fire rate. 
+												
 											</td>
 										</tr>
 										<tr>
-											<td>Dynamic Wave System</td>
+											<td>A* Pathfinding</td>
+											<td>
+												
+											</td>
+										</tr>
+										<tr>
+											<td>Drunkard Walk Alg.</td>
 											<td> 
-												The game reacts to the player's wave count. Every ten waves, new enemies are introduced, and more challenging variants of basic enemies appear, 
-												increasing difficulty.
+												
 											</td>
 										</tr>
 										<tr>
-											<td>Particle System and Shaders</td>
+											<td>State Machines</td>
 											<td> 
-												The game incorporates arcade-inspired hit and explosion particles, with voxel-based 3D effects and dynamic hit effects that change color based on 
-												the damaged entity. 
+												
 											</td>
 										</tr>
 										<tr>
-											<td>Music and Sound</td>
-											<td>Music and Sounds produced by a very talented member of the club, Edrick Fajardo. (efajard4@asu.edu)</span></a></td>
+											<td>Debug Console</td>
+											<td>
+
+                                            </td>
 										</tr>
 									</tbody>
 								</table>
 							<br>
 							<!-- Links -->
 							<ul class="icons">
-								<li>Link to Game - <a href="https://heatwave-studios.itch.io/rogue-nebula">https://heatwave-studios.itch.io/rogue-nebula</span></a></li>
-								<li>Repository Link - <a href="https://github.com/GDCASU/SummerSession2023" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								<li>Link to Demo - <a href="https://heatwave-studios.itch.io/rogue-nebula">https://heatwave-studios.itch.io/rogue-nebula</span></a></li>
+								<!-- <li>Repository Link - <a href="" class="icon brands fa-github"><span class="label">GitHub</span></a></li> (private repo link) -->
 							</ul>
 						</div>
 					</section>
