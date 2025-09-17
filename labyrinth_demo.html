@@ -19,7 +19,7 @@
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="labyrinth_demo.html" class="active">Labyrinth Demo</a>
+						<li><a href="labyrinth_demo.html" class="active">Labyrinth Algorithm</a>
 						<li><a href="rogue_nebula.html">Rogue Nebula</a></li>
 						<li><a href="future_scape.html">Future Scape</a></li>
 						<li><a href="unstable_star.html">Unstable Star</a></li>
@@ -52,24 +52,21 @@
 							<!-- Project Summary -->
 							<h2>Summary</h2>
 							<p> 
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis nunc fermentum, imperdiet mi et, rhoncus metus. Nulla bibendum leo eget nisi 
-								vehicula, malesuada rhoncus est auctor. Proin fringilla, justo sed mollis fermentum, ligula diam finibus mauris, eget dignissim dolor ex a ex. Cras 
-								nec lectus sagittis, vulputate nisi et, imperdiet lorem. Cras iaculis lectus ut aliquet rutrum. Integer aliquam turpis quis neque scelerisque eleifend. 
-								Maecenas semper auctor mauris non tincidunt. Vivamus sit amet accumsan dui.
+								The Labyrinth Algorithm is a custom algorithm that combines many sophisticated procedural generation techniques and blueprints to 
+								create vast, contigious, and interconnected dungeons. The algorithm utalizes time and memory efficiency, making dungeons with thousands 
+								of rooms generate in a matter of seconds. The algorithm is also built to be scalable and robust for future additions and gameplay mechanics.
 							</p>
-							<!-- Gameplay Description -->
+							
 							<h2>Gameplay</h2>
 							<p> 
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis nunc fermentum, imperdiet mi et, rhoncus metus. Nulla bibendum leo eget nisi 
-								vehicula, malesuada rhoncus est auctor. Proin fringilla, justo sed mollis fermentum, ligula diam finibus mauris, eget dignissim dolor ex a ex. Cras 
-								nec lectus sagittis, vulputate nisi et, imperdiet lorem. Cras iaculis lectus ut aliquet rutrum. Integer aliquam turpis quis neque scelerisque eleifend. 
-								Maecenas semper auctor mauris non tincidunt. Vivamus sit amet accumsan dui.
+								**Gameplay Demo Coming Soon**
 							</p>
-
-							<!-- Slideshow -->
+							
+							<!--
+							 Slideshow
 							<div class="slideshow-container">
 
-								<!-- Full-width images with number and caption text -->
+								Full-width images with number and caption text
 								<div class="mySlides fade">
 								<div class="numbertext">1 / 3</div>
 								<img src="images/nebula_gameplay.png" style="width:100%">
@@ -85,13 +82,13 @@
 								<img src="/images/nebula_gameplay3.png" style="width:100%">
 								</div>
 							
-								<!-- Next and previous buttons -->
+								Next and previous buttons
 								<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 								<a class="next" onclick="plusSlides(1)">&#10095;</a>
 							</div>
 							<br>
 							
-							<!-- Movement Script -->
+							Movement Script
 							<script>
 								let slideIndex = 1;
 								showSlides(slideIndex);
@@ -122,7 +119,7 @@
 									dots[slideIndex-1].className += " active";
 								}
 							</script>
-
+							-->
 							<!-- Feature List -->
 							<h2>Implemented Features</h2>
 							<div class="table-wrapper">
@@ -135,51 +132,50 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td>High Score System</td>
+											<td>Delaunay Triangulation in 3D</td>
 											<td>
-												The high score persists across playthroughs using Unity's Scriptable Object System and a JSON save format. 
-											</td>
-											<td></td>
-										</tr>
-										<tr>
-											<td>Player Abilities</td>
-											<td>
-												The player is given a small set of unique abilities. Players can use an "Evade" ability, providing brief 
-												invulnerability and extra speed, and the "Bubble Shield," granting extended invulnerability. Each ability 
-												has a cooldown timer displayed on the HUD that communicates when abilities will be available again.
+												In two dimensions Delaunay Triangulation is a set of points and triangles that divides a plane into a Voronoi diagram where the triangle's
+												angles are maximized. In three dimensions the plane is now a rectangular prism and the triangles are now tetrahedra. This subdivision algorithm is used
+												commonly in the graphics space for surface rendering but here it is the perfect application for making paths in the dungeon.
 											</td>
 										</tr>
 										<tr>
-											<td>Enemy Variety</td>
+											<td>Unique Room Placement</td>
 											<td>
-												The game includes four enemy types: a basic enemy type that flys back and forth, shooting periodically, radial enemies 
-												that fire bullets in all directions, bomber enemies that drop fused bombs, and homing enemies that track and shoot at the player’s position.
+												The first step of the algorithm. Rooms are placed randomly in a specified rectangular volume. This rectangular volume is then used as the basis for
+												the triangulation algorithm. The rooms then become the points that the triangulation must use to subdivide the space.
 											</td>
 										</tr>
 										<tr>
-											<td>Enemy Varients</td>
-											<td>
-												The game features four unique enemy types as well as 3 types of varients for them. Each varient of a type of enemy has an increased attack speed,
-												movement speed, health, and fire rate. 
-											</td>
-										</tr>
-										<tr>
-											<td>Dynamic Wave System</td>
+											<td>Prim's Algorithm</td>
 											<td> 
-												The game reacts to the player's wave count. Every ten waves, new enemies are introduced, and more challenging variants of basic enemies appear, 
-												increasing difficulty.
+												Once the space is triangulated Prim's Algorithm is used to find the shortest path between every point. We are left with a minimum spanning tree 
+												that contains no cycles; a basis for the rooms to be connected together contigiously.
 											</td>
 										</tr>
 										<tr>
-											<td>Particle System and Shaders</td>
+											<td>A* Pathfinding</td>
+											<td>
+												Once the path between each room is determined A* is used to link the starting and ending room of each edge together to form a sort of hallway between
+												them. Different heuristic functions are used to produce paths with unique behaviors. For instance, the manhatten function is used for the castle space
+												to make the halls relatively straight while the euclidean algorithm is used for the mines to make the halls rigid and cave-like.
+											</td>
+										</tr>
+										<tr>
+											<td>Drunkard Walker Algorithm</td>
+											<td>
+												An additional algorithm is added to the process to produce additional edges that lead to objectives and rewards. This algorithm is purley random in 
+												it's choice of direction. It chooses between one of six vectors for each branch.
+											</td>
+										</tr>
+										<tr>
+											<td>Blueprint Room Generation</td>
 											<td> 
-												The game incorporates arcade-inspired hit and explosion particles, with voxel-based 3D effects and dynamic hit effects that change color based on 
-												the damaged entity. 
+												The "Blueprint" is a technique unique to this algorithm. Before a single room is generated an entire blueprint is generated for the space using all 
+												of the techniques described above. The map is subdivided into a grid and each space of that grid can be occupied by a blueprint. Once the full blueprint
+												for a space is generated, it is parsed using recursive descent. Similar to a compiler, the parser recognizes unique shapes and sizes and generates an
+												appropriate room in the space.
 											</td>
-										</tr>
-										<tr>
-											<td>Music and Sound</td>
-											<td>Music and Sounds produced by a very talented member of the club, Edrick Fajardo. (efajard4@asu.edu)</span></a></td>
 										</tr>
 									</tbody>
 								</table>
