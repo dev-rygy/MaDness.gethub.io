@@ -60,10 +60,10 @@
 							<h2>Gameplay</h2>
 							<p> 
 								**Toggle full-screen for the best experience.**<br />
-								Click on "Instant Generation" to generate a new dungeon. Use WASD to move the character. Utalize the console to toggle free cam - press the tild
+								Click on "Instant Generation" to generate a new dungeon. Use WASD to move the character. Utilize the console to toggle free cam. Press the tild
 								key '~' to open the console, then type "tfc" and hit the enter key. This will allow you to fly around the map to observe the generated map better.
-								Exit free camera by repeating the process of opening the console and typing in the command once again. <br />
-								To generate a new map click on the "Regenerate" button. If the algorithm fails to generate it will retry running the algorithm. Fail-safes are in place
+								Exit the free cam by repeating the process of opening the console and typing in the command once again. <br />
+								To generate a new map click on the "Regenerate" button. If the algorithm fails to generate, it will retry running the algorithm. Fail-safes are in place
 								to prevent browser crashes and memory leaks.
 							</p>
 							
@@ -154,29 +154,29 @@
 										<tr>
 											<td>Prim's Algorithm</td>
 											<td> 
-												Once the space is triangulated Prim's Algorithm is used to find the shortest path between every point. We are left with a minimum spanning tree 
+												Once the space is triangulated, Prim's Algorithm is used to find the shortest path between every point. We are left with a minimum spanning tree 
 												that contains no cycles; a basis for the rooms to be connected together contiguously.
 											</td>
 										</tr>
 										<tr>
 											<td>A* Pathfinding</td>
 											<td>
-												Once the path between each room is determined A* is used to link the starting and ending room of each edge together to form a sort of hallway between
-												them. Different heuristic functions are used to produce paths with unique behaviors. For instance, the manhatten function is used for the castle space
-												to make the halls relatively straight while the euclidean algorithm is used for the mines to make the halls rigid and cave-like.
+												Once the path between each room is determined, A* is used to link the starting and ending room of each edge together to form a sort of hallway between
+												them. Different heuristic functions are used to produce paths with unique behaviors. For instance, the Manhatten function is used for the castle space
+												to make the halls relatively straight while the Euclidean algorithm is used for the mines to make the halls rigid and cave-like.
 											</td>
 										</tr>
 										<tr>
 											<td>Drunkard Walker Algorithm</td>
 											<td>
-												An additional algorithm is added to the process to produce additional edges that lead to objectives and rewards. This algorithm is purley random in 
+												An additional algorithm is added to the process to produce additional edges that lead to objectives and rewards. This algorithm is purely random in 
 												it's choice of direction. It chooses between one of six vectors for each branch.
 											</td>
 										</tr>
 										<tr>
 											<td>Blueprint Room Generation</td>
 											<td> 
-												The "Blueprint" is a technique unique to this algorithm. Before a single room is generated an entire blueprint is generated for the space using all 
+												The "Blueprint" is a technique unique to this algorithm. Before a single room is generated, an entire blueprint is generated for the space using all 
 												of the techniques described above. The map is subdivided into a grid and each space of that grid can be occupied by a blueprint. Once the full blueprint
 												for a space is generated, it is parsed using recursive descent. Similar to a compiler, the parser recognizes unique shapes and sizes and generates an
 												appropriate room in the space.
