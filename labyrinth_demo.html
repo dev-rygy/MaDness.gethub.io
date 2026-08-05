@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Ryan Carpenter's Portfolio - Labyrinth Demo</title>
+		<title>Ryan Carpenter's Portfolio - Labyrinth Procedural Generator</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />	<!-- css stylesheet -->
@@ -19,7 +19,7 @@
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="labyrinth_demo.html" class="active">Labyrinth Algorithm</a>
+						<li><a href="labyrinth_demo.html" class="active">Labyrinth</a>
 						<li><a href="rogue_nebula.html">Rogue Nebula</a></li>
 						<li><a href="future_scape.html">Future Scape</a></li>
 						<li><a href="unstable_star.html">Unstable Star</a></li>
@@ -28,7 +28,7 @@
 						<!-- <li><a href="star_raid.html">Star Raid</a></li> (archived) -->
 						<!-- <li><a href="fishy_business.html">Fishy Business</a></li> (archived) -->
 						<!-- <li><a href="soc.html">Spirit of Calamity</a></li> (archived) -->
-						<li><a href="other_pj.html">Smaller Projects</a></li>
+						<!-- <li><a href="other_pj.html">Smaller Projects</a></li> (archived) -->
 					</ul>
 				</nav>
 			</header>
@@ -40,7 +40,7 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<!-- Project Title -->
-							<h1 class="major">The Labyrinth Algorithm</h1>
+							<h1 class="major">The Labyrinth Procedural Generator</h1>
 							<!-- Game Embed -->
 							<iframe class="embed" frameborder="0" src="https://itch.io/embed-upload/15022834?color=333333" allowfullscreen="" width="1000" height="700"><a href="https://madcolors-entertainment.itch.io/labyrinth-demo">Play Labyrinth Demo on itch.io</a></iframe>
 							<!-- Big Game Widget -->
@@ -50,146 +50,536 @@
 							<iframe class="smallWidget" frameborder="0" src="https://itch.io/embed/3897193?bor`der_width=2&amp;bg_color=0098db&amp;fg_color=ffffff&amp;link_color=0ce6f2&amp;border_color=0ce6f2" width="210" height="169">
 								<a href="https://madcolors-entertainment.itch.io/labyrinth-demo">Labyrinth Demo by Ryan Carpenter</a></iframe>
 							<!-- Project Summary -->
-							<h2>Summary</h2>
+							<h2>Overview</h2>
 							<p> 
-								The Labyrinth Algorithm is a custom algorithm that combines many sophisticated procedural generation techniques and blueprints to 
-								create vast, contiguous, and interconnected dungeons. The algorithm utilizes time and memory efficiency, making dungeons with thousands 
-								of rooms generate in a matter of seconds. The algorithm is also built to be scalable and robust for future additions and gameplay mechanics.
+								The <b>Labyrinth</b> is a procedural dungeon generation algorithm built in Unity/C# that creates seamlessly connected, thematically distinct 3D areas without loading
+								screens. The algorithm's rules are heavily inspired by the rogue-likes like <i>Enter the Gungeon</i> and the intentional level design of games like <i>Dark Souls</i> and <i>Zelda</i>.
 							</p>
-							
-							<h2>Gameplay</h2>
-							<h5>*Toggle full-screen for the best experience*</h5>
-							<p> 
-								Click on "Instant Generation" to generate a new dungeon. Use WASD to move the character. Utilize the console to toggle free cam. Press the tild
-								key '~' to open the console, then type "tfc" and hit the enter key. This will allow you to fly around the map to observe the generated map better.
-								Exit the free cam by repeating the process of opening the console and typing in the command once again. <br />
-								To generate a new map click on the "Regenerate" button. If the algorithm fails to generate, it will retry running the algorithm. Fail-safes are in place
-								to prevent browser crashes and memory leaks.
-							</p>
-							
-							
-							<!-- Slideshow -->
-							<div class="slideshow-container">
 
-								<!-- Full-width images with number and caption text -->
-								<div class="mySlides fade">
-								<div class="numbertext">1 / 3</div>
-								<img src="images/labyrinth_images/labyrinth_slide_3.png" style="width:100%">
-								</div>
-							
-								<div class="mySlides fade">
-								<div class="numbertext">2 / 3</div>
-								<img src="/images/labyrinth_images/labyrinth_slide_2.png" style="width:100%">
-								</div>
-							
-								<div class="mySlides fade">
-								<div class="numbertext">3 / 3</div>
-								<img src="/images/labyrinth_images/labyrinth_slide_4.png" style="width:100%">
-								</div>
-							
-								<!-- Next and previous buttons -->
-								<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-								<a class="next" onclick="plusSlides(1)">&#10095;</a>
+							<h3>Highlights</h3>
+							<ul>
+								<li><b>Custom operation graph</b> — a hand-built, instruction-set style execution model ("Blueprint Operations") that 
+									makes the entire generation pipeline stepwise and debugable. On top of that the algorithm is highly versatile and many 
+									different generation rules can be applied to suite the map's generation style.</li>
+								<li><b>2D & 3D Delaunay triangulation</b> — used to connect rooms into a navigable graph, including handling for degenerate/coplanar 
+									cases in 3D.</li>
+								<li><b>Graph algorithms</b> — Prim's Algorithm for minimum spanning trees, plus randomized cycle selection for controlled dungeon looping.</li>
+								<li><b>A* pathfinding</b> — connecting corridors with four swappable heuristics that effect the path's style.</li>
+								<li><b>Zone system</b> — modular, themed areas that connect enabling multi-entry-point worlds with no scene loading.</li>
+								<li><b>Blueprints</b> — a self-designed grid-based intermediate representation that decouples "where a room can go" from "what 
+									room actually spawns there."</li>
+							</ul>
+							<div style="text-align: center;">
+								<Img src="/images/labyrinth_images/orbit_loop.gif">
 							</div>
+
+
+							<h2>Backstory</h2>
+							<p>
+								I began building this algorithm back in 2023 for a club at my university. My peers and I were tasked with procedurally generating a 3D 
+								dungeon for an FPS we were making. It goes without saying that, between coursework and other obligations, a single semester wasn't enough 
+								time to finish a game of that scale. The game itself never came together, but it was enough to hook me on procedural generation. I picked 
+								the algorithm back up and kept developing it in 2024.
+								<br><br>
+								The procedural generation was simple at first, relying on an algorithm called The Drunkard's Walk that spawned rooms in random directions 
+								from the previous one. I later added Delaunay triangulation, A\*, and Prim's algorithm to the pipeline.
+								<br><br>
+								Most of the algorithms the Labyrinth uses today are well known in the proc-gen community, but there's one feature I can genuinely call my 
+								own. Back in the club days, I had little formal knowledge of how procedural generation actually worked, so in a way, I had to get creative.
+								Drawing on what I knew about Drunkard's Walk and rule tiles, I came up with a feature I call "Blueprints", individual, single-celled 
+								components on a grid that combine to form an entire map.
+								<br><br>
+								I've always admired how games like _The Binding of Isaac_, _Enter the Gungeon_, and _Wizard of Legend_ generate their maps, but I equally 
+								admired the intricate, deliberate level design of games like _Zelda_ and _Dark Souls_. Was there a way to randomize dungeon layouts while 
+								still producing levels that felt hand-crafted and made sense? Is it possible to link these levels together seamlessly so that different 
+								themed areas didn't need to be loaded in a different scene? That's the problem I set out to solve.
+								<br><br>
+								The algorithm was made in Unity 3D but can be rewritten to work in any game engine.
+							</p>
+
+							<h2>Blueprints</h2>
+							<p>
+								Blueprints are the backbone of the algorithm. They must exist in order for any rooms to generate. Blueprints are simply single-celled marks 
+								on a grid that tell the algorithm "a room can eventually spawn here". When the blueprints are done generating a second pass then parses the 
+								blueprints and generates rooms based on a set of rules. Think of how Rule-Tiles work in game engines.
+
+								<div style="text-align: center;">
+								<Img src="/images/labyrinth_images/unique_blueprints.png">
+								<p style="text-align: center; font-size: 15px;">Blueprints being generated.</p>
+								</div>
+								<pre><code>public class Blueprint
+{
+	public readonly string CellID;
+	public readonly Vector3Int Position;    // Position of blueprint coords on grid
+	public bool Claimed { get; set; }       // Prevents/allows parsing algorithm to use blueprint
+	public bool[] EntryPointFlags { get; set; }
+
+	// Constructor
+	public Blueprint(Vector3Int postion, string cellID = "Blueprint")
+	{
+		Claimed = true;
+		CellID = cellID;
+		Position = postion;
+		EntryPointFlags = new bool[6];       // A flag to mark which entrances should be open for a room
+	}
+}</code></pre>
+
+								To prevent blueprints from spawning on top of other blueprints a Dictionary is used. A C# dictionary has O(1) lookup time, cannot contain 
+								duplicates, and can allocate space dynamically. To prevent rooms from spawning on top of each other blueprints house a flag called 
+								<code>Available</code> that tells the room parser whether or not to include the blueprint in it's check. Finally, <code>EntryPointFlags</code>
+								tell the room what doorways it needs to open. These flags are determined during the blueprint pass of the algorithm.
+							</p>
+
+							<h2>Blueprint Operations</h2>
+							<p>
+								As the algorithm grew larger, I began to worry about how hard it would be to debug in future iterations. At the time, the procedural 
+								generator executed all of its code in one go, but I wanted a way to step through each process individually, something akin to setting 
+								breakpoints in code. This is when I had the idea of applying concepts from assembly and instruction set architecture to my algorithm. 
+								Little did I know that building this debugger would end up making my procedural generator more dynamic and controllable than ever before.
+								<br><br>
+								To accomplish this, I needed to split each of the algorithm's processes into individual, executable components I call 
+								"Blueprint Operations." Each operation holds both input and output data, similar to registers in an assembly language. Operations are 
+								initialized and placed into a queue, then executed one by one.
+
+								<pre><code>public abstract class BlueprintOperation
+{
+	// DataID for is used strictly for debugging purposes.
+	public string OperationID { get; protected set; }
+
+	// Ports are the auguments and return values of operations.
+	public List<string> InputPorts { get; protected set; }
+	public List<string> OutputPorts { get; protected set; }
+
+	protected MapGenerationContext _context;
+
+	public BlueprintOperation(MapGenerationContext context)
+	{
+		InputPorts = new List<string>();
+		OutputPorts = new List<string>();
+
+		_context = context;
+	}
+
+	...
+}
+
+...
+
+public sealed class MapGenerationContext
+{
+	// Quick random access blueprint container; stores all blueprints generated in map
+	private static Dictionary<Vector3Int, Blueprint> _blueprintDictionary;
+	public static Dictionary<Vector3Int, Blueprint> BlueprintDictionary => _blueprintDictionary;
+
+	...
+}</code></pre>
+							</p>
+
+							<h2>Map Generation Context</h2>
+							<p>
+								Just like in assembly, the outputs of some operations need to be stored in memory so other operations can use them later. The map 
+								generation's <code>context</code> holds both the instruction/operation execution order and the data used in those operations.
+
+								<pre><code>
+public sealed class MapGenerationContext
+{
+	...
+
+    public int OperationIDCounter { get; private set; } = 10000;
+    public int MemoryIDCounter { get; private set; } = 20000;
+
+	// Stores blueprint operations to be executed later
+    public LinkedList<BlueprintOperation> OperationQueue { get; private set; }
+
+	// Stores outputs from blueprint operations
+    private Dictionary<string, object> _dataCache;
+
+    public MapGenerationContext()
+    {
+        _dataCache = new();
+        _blueprintDictionary = new();
+        OperationQueue = new();
+    }
+
+    public BlueprintOperation OperationQueuePeek()
+    {
+        return OperationQueue?.First.Value;
+    }
+
+    public void OperationQueueEnqueue(BlueprintOperation op)
+    {
+        OperationQueue?.AddLast(op);
+    }
+
+    public void OperationQueueAddFront(BlueprintOperation op)
+    {
+        OperationQueue?.AddFirst(op);
+    }
+
+    public BlueprintOperation OperationQueueDequeue()
+    {
+        // Check to see if queue has atleast one operation stored
+        if (OperationQueue?.First is null)
+            return null;
+
+        BlueprintOperation op = OperationQueue?.First.Value;
+        OperationQueue?.RemoveFirst();
+        return op;
+    }
+    
+    // Get data
+    public bool TryGet<T>(string memoryID, out T value)
+    {
+        if (_dataCache is null)
+        {
+            value = default;
+            return false;
+        }
+
+        if (_dataCache.TryGetValue(memoryID, out object obj) && obj is T castValue)
+        {
+            value = castValue;
+            return true;
+        }
+
+        value = default;
+        return false;
+    }
+
+	// Store data
+    public void Malloc(string memoryID, object value)
+    {
+        if (_dataCache is null)
+            return;
+
+        _dataCache[memoryID] = value;
+    }
+
+	// Check for data
+    public bool Contains(string memoryID)
+    {
+        if (_dataCache is null)
+            return false;
+
+        return _dataCache.ContainsKey(memoryID);
+    }
+
+	// Remove data
+    public void Remove(string memoryID)
+    {
+        if (_dataCache is null)
+            return;
+
+        if (_dataCache.ContainsKey(memoryID))
+            _dataCache.Remove(memoryID);
+    }
+
+    public int ConsumeOperationID()
+    {
+        return OperationIDCounter++;
+    }
+
+    public int ConsumeMemoryID()
+    {
+        return MemoryIDCounter++;
+    }
+    
+    ...
+}
+								</code></pre>
+							</p>
+
+							<h2>Blueprint Graph</h2>
+							Around the time I was implementing this feature, I started learning a bit of Unreal Engine and was impressed by its visual scripting graph, 
+							conveniently called "Blueprints." Conveniently I was able to draw a few parallels between Unreal's Blueprints and mine. Each operation is 
+							essentially a node with inputs, outputs, and an execution order. They can be executed in any order and support a wide range of use cases. 
+							For example, this implementation lets me require a key from a separate path to unlock a door to a new one, or pathfind to any given room 
+							using any heuristic of my choosing. This is great for hidden secrets, connecting zones, and countless other unique cases.
+							<br><br>
+							<div style="text-align: center;">
+								<Img src="/images/labyrinth_images/blueprint_graph.png">
+							</div>
+							<p style="text-align: center; font-size: 15px;">Blueprint graph diagram for generic zone.</p>
+							The graph contains many intermediary operations that are also useful to the developer. Set operations like union, intersection, and difference 
+							can be applied to blueprints for interesting generations. There are random access operations for variation, and even branch and jump operations 
+							for loops.
+							<br><br>
+							Right now, all nodes are hardcoded into a controller, though I'd like to move to Unity's graphing toolkit in a future implementation. Below 
+							is the controller used to both store and execute operations. Operations can be stepped through by a specified `stepLength`, given via the 
+							<code>Advance()</code> function.
+							<br><br>
+
+							<pre><code>public class MapGenerationController
+{
+	private void LoadOperations()
+	{
+		// Hardcoded operations listed in their order of execution. Loaded into context to be executed later.
+		
+		...
+	}
+
+	private void ConsumeStep()
+	{	
+		if (_runToEnd)
+			return;
+		
+		if (_stepBudget > 0)
+			_stepBudget--;
+	}
+	
+	public void Advance(int stepLength)
+	{	
+		if (stepLength <= 0)
+			return;
+		
+		_stepBudget += stepLength;
+		_runToEnd = false;
+	}
+	
+	public void AdvanceAll()
+	{
+		if (!IsGenerating)
+			return;
+		
+		_runToEnd = true;
+	}
+	
+	private IEnumerator ExecuteOperations()
+	{
+		// Execute operations and generate blueprints
+		while (_context.OperationQueue.Count > 0)
+		{
+			// Halt the execution of operations
+			while (!_runToEnd && _stepBudget <= 0)
+				yield return null;
+			
+			ConsumeStep();
+		
+			// Dequeue the current opration
+			BlueprintOperation operation = _context.OperationQueueDequeue();
+			if (operation == null)
+				throw new ArgumentNullException(nameof(operation));
+		
+			// Execute Operation
+			bool result = operation.Execute();
+		
+			// Operation failed to execute; stop running coroutine
+			if (!result)
+			{
+				GenerationFailed();
+				yield break;
+			}
+		}
+	}
+	
+	...
+}</code></pre>
+
+							<h2>Zones</h2>
+							<p>
+								One of the most important problems I set out to solve was a way to generate themed areas and connect them together in a seamless fashion. 
+								As stated in the intro, alongside rogue-likes I'm also a huge fan of RPGs that can transport the player to different areas from multiple 
+								entry points on the map. The concept of "Zones" helped me accomplish this.
+								<br><br>
+								Zones connect to one another through intermediary zones I call "Connection Zones." These zones simply intersect their bounds with others 
+								and connect them via their own blueprint operations.
+								<br><br>
+								<div style="text-align: center;">
+									<Img src="/images/labyrinth_images/zone_connection_showcase.gif">
+								</div>
+								<p style="text-align: center; font-size: 15px;">
+									Connection zone's blueprints being generated. Blue colored blueprints are a part of the zone and <br> purple
+									are a part of the connection zone.
+								</p>
+								As of now, Zones are purely containers that house unique rooms, branches, and bounds that contain their blueprints. A controller 
+								still determines zone generation, though in a future update, Zones will be able to house their own operations and blueprint graph for 
+								unique generation rules.
+							</p>
+
+							<h2>Unique Blueprint Placement</h2>
+							<p>
+								Unique rooms are rooms determined by their zone before runtime; the blueprints generated in place of these rooms _are not_ to be included later in the room parsing procedure. 
+								These are most likely boss rooms, mini-boss rooms, large rooms, or any rooms whose blueprint shape would be difficult or impossible to parse later.
+								<br><br>
+								These rooms can either be fixed (placed in a set position) or bounded (placed randomly within set bounds). Both cases have their respective blueprint operations. The blueprints 
+								generated from this operation can later be used as points for the Delaunay and A\* operations.
+							</p>
+
+							<h2>Divergent Blueprint Placement</h2>
+							<p>
+								Some zones may have few unique rooms, which means a small set of points for pathfinding. The resulting generation would be very simple and boring. To make the generation a bit more 
+								windy and organic, we place what I call "Divergent Rooms" to add more points to the pathfinding graph.
+								<br><br>
+								Divergent rooms are a set number of blueprints randomly spawned within a zone. These blueprints can have varied dimensions, described as an input to the operation. The blueprints 
+								generated from this operation can later be used as points by the Delaunay and A\* operations.
+							</p>
+
+							<h2>Delaunay Triangulation</h2>
+							<p>
+								Delaunay Triangulation takes a set of defined points and creates a triangle mesh that can later be used as a graph for pathfinding. In 2D it's fairly simple, but in 3D it gets more 
+								complicated, instead of triangles we must use tetrahedra and calculate the volume of those tetrahedra using the determinant function.
+								<br><br>
+								Delaunay uses a set of blueprint positions as points and creates edges connecting them. It also helps prevent the generation of a dungeon with too many long and unnecessary paths 
+								between rooms.
+							</p>
+							
+							<h3>Handling Coplanar Tetrahedron</h3>
+							<p>
+								A major problem I faced was dealing with degenerate tetrahedra, which can occur when all four points are coplanar. I needed to ensure that at least one blueprint point used in 
+								a tetrahedron exists on a different floor than the other three, to prevent this from happening. When a zone is completely flat (one floor), I can just use 2D Delaunay to connect 
+								the blueprints instead.
+							</p>
+							<h3>Greedy Algorithms</h3>
+							<p>
+								Delaunay ensures every point in the resultant graph is connected, which means no room is left out. However, this can still result in too many edges, leading to an excess of branches 
+								and rooms. To manage this, I use a greedy algorithm, Prim's Algorithm, to find the MST (minimum spanning tree) in the graph. From there, we can randomly select other edges in the 
+								graph if we want some loops in our dungeon.
+							</p>
+							<h2>Pathfinding</h2>
+							<p>
+								Many pathfinding algorithms exist that could help connect blueprints together, but none are as fast and versatile as A\*. Using a pathfinding operation, I can either connect two 
+								blueprints directly or pass in a graph and connect all of its nodes. A\* returns all the positions needed to connect the blueprints, and from there I simply spawn new blueprints in 
+								their place.
+								<h3>Heuristic Functions</h3>
+								A cost/heuristic function tells A\* how to path toward each blueprint. The heuristic can make the path curvy, straight, or zig-zagged. There are endless possibilities for what the cost function can be, but as of now I use four well-known functions:
+								<br><br>
+								<ol>
+									<li><b>Euclidean:</b> creates a fairly straight path to the target.</li>
+										$$D(x, y) = \sqrt{((x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2)}
+									<li><b>Manhattan:</b> causes the path to stay parallel to the x, y, and z axes.</li>
+										$$D(x, y) = | x_2 - x_1 | + | y_2 - y_1 | + | z_2 - z_1 |$$
+									<li><b>Chebyshev:</b> causes the path to zig-zag and staircase.</li>
+										$$D(x, y) = max( | x_2 - x_1 |, | y_2 - y_1 |, | z_2 - z_1 | )$$	
+									<li><b>Dijkstra:</b> guaranteed optimal path; cheapest route.</li>
+										$$D(x, y) = 0$$
+								</ol>
+
+								<div style="text-align: center;">
+									<Img src="/images/labyrinth_images/heuristic_showcase.gif">
+									<p style="text-align: center; font-size: 15px;">Creating unique paths with heuristic/distance functions. A* returns path and blueprints are generated along it</p>
+								</div>
+							</p>
+
+							<h2>The Drunkard's Walk</h2>
+							<p>
+								This was the first algorithm that gave birth to the Labyrinth. Simply put, a blueprint is placed randomly in one of six directions from a 
+								point in space. This continues until a pathway is generated with the desired number of rooms. Seems simple enough at first, but I ran 
+								into a problem: what if the point is already surrounded by other blueprints? Should the algorithm just stop generating and cut its losses?
+								
+								<h3>Backtracking</h3>
+								<p>
+									The solution was backtracking. When a conflict occurs, a recursive algorithm backtracks to a previously placed blueprint and attempts 
+									to generate a new one in its place.
+								<pre><code>private bool BlueprintDrunkardWalkRecursive(BoundsInt bounds, Blueprint previousBlueprint)
+{
+	// Amount of desired blueprints placed; stop condition
+	if (path.BlueprintCount() >= DesiredPathLength)
+		return true;
+
+	// Attempt to place a new blueprint
+	Blueprint newBlueprint = PlaceBlueprintInRandomDirection(bounds, previousBlueprint);
+
+	// New blueprint was placed -> place next blueprint
+	if (newBlueprint != null)
+	{
+		bool placed = BlueprintDrunkardWalkRecursive(bounds, newBlueprint);
+
+		// next blueprint could not be placed? Continuation of path failed -> try prev blueprint again
+		if (!placed)
+			return BlueprintDrunkardWalkRecursive(bounds, previousBlueprint); // Backtrack
+		else
+			return true;
+	}
+	return false;    // No blueprint could be placed; not enough valid space
+}</code></pre>
+								Drunkard's Walk is still used today for branches that can lead to rewards, trials, and secrets.
+							</p>
+
+							<h2>Room Parsing</h2>
+							<p>
+								The final pass of the algorithm parses all available blueprints and determines what prefab rooms can be generated from them. 
+								The parsing rules are simple for now, and only four room shapes can currently be generated: "Small" rooms take up a (1, 1, 1) space, 
+								"Long" rooms take up a (2, 1, 1) space, "Tall" rooms take up a (1, 2, 1) space, and "Big" rooms take up a (2, 1, 2) space. For a future 
+								update, I'd like to rework the parsing algorithm to generate rooms of any shape using recursion and rules.
+							<h3>Room Entry Points</h3>
+							<p>
+								As stated earlier, the Blueprint class contains an array called `EntryPointFlags`. This communicates which walls need entranceways 
+								connecting to adjacent rooms. The parser detects which face of the blueprint corresponds to which wall of the room by matching the array 
+								index.
+							
+								<ul>
+									<li>Index 0 — Right Face (1, 0, 0)</li>
+									<li>Index 1 — Left Face (-1, 0, 0)</li>
+									<li>Index 2 — Forward Face (0, 0, 1)</li>
+									<li>Index 3 — Back Face (0, 0, -1)</li>
+									<li>Index 4 — Top Face (0, 1, 0)</li>
+									<li>Index 5 — Bottom Face (0, -1, 0)</li>
+								</ul>
+								
+								<div style="text-align: left;">
+									<Img src="/images/labyrinth_images/room_walls.png">
+								</div>
+
+							</p>
+
+							<h2>Room Rotation</h2>
+							<p>Rooms can be made to rotate if suitable blueprints are found in different orientations. For instance, if two blueprints are found occupying 
+								a (1, 1, 2) space, we know a "Long" room can fit there, although how can we generate them when they are oriented (2, 1, 1) by default? 
+								Rotation handles this case by rotating not only the room prefab, but also the entry point array of each Blueprint associated with the room,
+								so the entrances still correctly line up with adjacent rooms.
+
+<pre><code>private bool[] HandleRotation(bool[] entrypointArray, Vector3 rotation)
+{
+	// If no rotation return original array
+    if (rotation == Vector3.zero)
+        return entrypointArray;
+
+    // A 90-degree yaw swaps which physical wall each blueprint face flag now points at 
+	// (e.g. the wall that used to face +Z now faces +X), so the flags have to be permuted to match and not just copied
+    bool[] rotatedArray = new bool[entrypointArray.Length];
+    if (rotation.y == 90)      // If 90 degree rotation shift down
+    {
+        rotatedArray[0] = entrypointFlagArray[2]; // Positive X to Negative Z
+        rotatedArray[1] = entrypointFlagArray[3]; // Negative X to Positive z
+        rotatedArray[2] = entrypointFlagArray[1]; // Positive Z direction the same
+        rotatedArray[3] = entrypointFlagArray[0]; // Negative Z direction the same
+        rotatedArray[4] = entrypointFlagArray[4]; // Positive Y to Positive X
+        rotatedArray[5] = entrypointFlagArray[5]; // Negative Y to Negative X
+    }
+    
+    return rotatedArray;
+}</code></pre>
+							</p>
+							
+							<h2>Upcoming Features</h2>
+								<ul>
+									<li>Rework room parsing algorithm using recursive descent and grid rules</li>
+									<li>Disconnect Unity dependencies and store code in DLL</li>
+									<li>Use Unity's graphing toolkit to replace hardcoded blueprint graph</li>
+									<li>Chunk loading</li>
+									<li>Terrain generation using Perlin Noise</li>
+									<li>Player map</li>
+								</ul>
+
+							<h2>Sources</h2>
+							[1] <a href="https://vazgriz.com/119/procedurally-generated-dungeons/">Procedurally Generated Dungeons</a>
+							<br>
+							[2] <a href="https://summit-2223-sem1.game-lab.nl/?p=49">D&D Dungeon Generation By Marvin van der Sluis</a>
+							<br>
+							[3] <a href="https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm">Boyer-Watson Algorithm</a>
+							<br>
+							[4] <a href="https://theory.stanford.edu/~amitp/GameProgramming/">Amit's A* Pages</a>
+							<br>
+							[5] <a href="https://ondrejnepozitek.github.io/Edgar-Unity/docs/next/examples/enter-the-gungeon/">https://ondrejnepozitek.github.io/Edgar-Unity/docs/next/examples/enter-the-gungeon/</a>
 							<br>
 							
-							<!-- Movement Script -->
-							<script>
-								let slideIndex = 1;
-								showSlides(slideIndex);
-
-								// Next/previous controls
-								function plusSlides(n) {
-									showSlides(slideIndex += n);
-								}
-
-								// Thumbnail image controls
-								function currentSlide(n) {
-									showSlides(slideIndex = n);
-								}
-
-								function showSlides(n) {
-									let i;
-									let slides = document.getElementsByClassName("mySlides");
-									let dots = document.getElementsByClassName("dot");
-									if (n > slides.length) {slideIndex = 1}
-									if (n < 1) {slideIndex = slides.length}
-									for (i = 0; i < slides.length; i++) {
-										slides[i].style.display = "none";
-									}
-									for (i = 0; i < dots.length; i++) {
-										dots[i].className = dots[i].className.replace(" active", "");
-									}
-									slides[slideIndex-1].style.display = "block";
-									dots[slideIndex-1].className += " active";
-								}
-							</script>
-							
-							<!-- Feature List -->
-							<h2>Implemented Features</h2>
-							<div class="table-wrapper">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Delaunay Triangulation in 3D</td>
-											<td>
-												In two dimensions Delaunay Triangulation is a set of points and triangles that divides a plane into a Voronoi diagram where the triangle's
-												angles are maximized. In three dimensions the plane is now a rectangular prism and the triangles are now tetrahedra. This subdivision algorithm is used
-												commonly in the graphics space for surface rendering but here it is the perfect application for making paths in the dungeon.
-											</td>
-										</tr>
-										<tr>
-											<td>Unique Room Placement</td>
-											<td>
-												The first step of the algorithm. Rooms are placed randomly in a specified rectangular volume. This rectangular volume is then used as the basis for
-												the triangulation algorithm. The rooms then become the points that the triangulation must use to subdivide the space.
-											</td>
-										</tr>
-										<tr>
-											<td>Prim's Algorithm</td>
-											<td> 
-												Once the space is triangulated, Prim's Algorithm is used to find the shortest path between every point. We are left with a minimum spanning tree 
-												that contains no cycles; a basis for the rooms to be connected together contiguously.
-											</td>
-										</tr>
-										<tr>
-											<td>A* Pathfinding</td>
-											<td>
-												Once the path between each room is determined, A* is used to link the starting and ending room of each edge together to form a sort of hallway between
-												them. Different heuristic functions are used to produce paths with unique behaviors. For instance, the Manhatten function is used for the castle space
-												to make the halls relatively straight while the Euclidean algorithm is used for the mines to make the halls rigid and cave-like.
-											</td>
-										</tr>
-										<tr>
-											<td>Drunkard Walker Algorithm</td>
-											<td>
-												An additional algorithm is added to the process to produce additional edges that lead to objectives and rewards. This algorithm is purely random in 
-												it's choice of direction. It chooses between one of six vectors for each branch.
-											</td>
-										</tr>
-										<tr>
-											<td>Blueprint Room Generation</td>
-											<td> 
-												The "Blueprint" is a technique unique to this algorithm. Before a single room is generated, an entire blueprint is generated for the space using all 
-												of the techniques described above. The map is subdivided into a grid and each space of that grid can be occupied by a blueprint. Once the full blueprint
-												for a space is generated, it is parsed using recursive descent. Similar to a compiler, the parser recognizes unique shapes and sizes and generates an
-												appropriate room in the space.
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							<br>
 							<!-- Links -->
+							<p>
 							<ul class="icons">
 								<li>Link to Game - <a href="https://madcolors-entertainment.itch.io/labyrinth-demo"> https://madcolors-entertainment.itch.io/labyrinth-demo</span></a></li>
 								<!-- <li>Repository Link - <a href="" class="icon brands fa-github"><span class="label">GitHub</span></a></li> -->
 							</ul>
+						</p>
 						</div>
 					</section>
 			</div>
