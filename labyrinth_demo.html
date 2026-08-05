@@ -11,6 +11,94 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />	<!-- css stylesheet -->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#toc {
+				position: fixed;
+				top: 55%;
+				left: 1em;
+				transform: translateY(-50%);
+				width: 220px;
+				max-height: 80vh;
+				z-index: 10000;
+			}
+
+			#toc .toc-inner {
+				background-color: rgba(32, 21, 51, 0.85);
+				border: solid 1px rgba(176, 196, 222, 0.25);
+				border-radius: 6px;
+				padding: 1.25em 1.5em;
+				max-height: 70vh;
+				overflow-y: auto;
+			}
+
+			#toc .toc-title {
+				display: block;
+				color: #ffffff;
+				font-size: 0.75em;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				margin-bottom: 0.75em;
+			}
+
+			#toc ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			#toc ul ul {
+				margin: 0.35em 0 0.5em 1em;
+			}
+
+			#toc li {
+				margin: 0;
+			}
+
+			#toc a {
+				display: block;
+				padding: 0.3em 0;
+				color: lightsteelblue;
+				border-bottom: 0;
+				font-size: 0.8em;
+				line-height: 1.3em;
+				transition: color 0.2s ease;
+			}
+
+			#toc ul ul a {
+				font-size: 0.75em;
+				color: rgba(176, 196, 222, 0.75);
+			}
+
+			#toc a:hover {
+				color: #0ce6f2;
+			}
+
+			#toc a.active {
+				color: #ffffff;
+				font-weight: bold;
+			}
+
+			#toc .toc-inner::-webkit-scrollbar {
+				width: 6px;
+			}
+
+			#toc .toc-inner::-webkit-scrollbar-thumb {
+				background-color: rgba(176, 196, 222, 0.35);
+				border-radius: 3px;
+			}
+
+			@media screen and (max-width: 1700px) {
+				#toc {
+					display: none;
+				}
+			}
+
+			@media screen and (min-width: 1701px) {
+				#main.wrapper > .inner {
+					margin-left: 260px;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 		<!-- Header -->
@@ -33,6 +121,48 @@
 				</nav>
 			</header>
 
+		<!-- Table of Contents -->
+			<nav id="toc">
+				<div class="toc-inner">
+					<strong class="toc-title">Contents</strong>
+					<ul>
+						<li><a href="#overview">Overview</a></li>
+						<li><a href="#backstory">Backstory</a></li>
+						<li><a href="#blueprints">Blueprints</a></li>
+						<li><a href="#blueprint-operations">Blueprint Operations</a></li>
+						<li><a href="#map-generation-context">Map Generation Context</a></li>
+						<li><a href="#blueprint-graph">Blueprint Graph</a></li>
+						<li><a href="#zones">Zones</a></li>
+						<li><a href="#unique-blueprint-placement">Unique Blueprint Placement</a></li>
+						<li><a href="#divergent-blueprint-placement">Divergent Blueprint Placement</a></li>
+						<li><a href="#delaunay-triangulation">Delaunay Triangulation</a>
+							<ul>
+								<li><a href="#coplanar-tetrahedron">Coplanar Tetrahedron</a></li>
+								<li><a href="#greedy-algorithms">Greedy Algorithms</a></li>
+							</ul>
+						</li>
+						<li><a href="#pathfinding">Pathfinding</a>
+							<ul>
+								<li><a href="#heuristic-functions">Heuristic Functions</a></li>
+							</ul>
+						</li>
+						<li><a href="#drunkards-walk">The Drunkard's Walk</a>
+							<ul>
+								<li><a href="#backtracking">Backtracking</a></li>
+							</ul>
+						</li>
+						<li><a href="#room-parsing">Room Parsing</a>
+							<ul>
+								<li><a href="#room-entry-points">Room Entry Points</a></li>
+							</ul>
+						</li>
+						<li><a href="#room-rotation">Room Rotation</a></li>
+						<li><a href="#upcoming-features">Upcoming Features</a></li>
+						<li><a href="#sources">Sources</a></li>
+					</ul>
+				</div>
+			</nav>
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -50,7 +180,7 @@
 							<iframe class="smallWidget" frameborder="0" src="https://itch.io/embed/3897193?bor`der_width=2&amp;bg_color=0098db&amp;fg_color=ffffff&amp;link_color=0ce6f2&amp;border_color=0ce6f2" width="210" height="169">
 								<a href="https://madcolors-entertainment.itch.io/labyrinth-demo">Labyrinth Demo by Ryan Carpenter</a></iframe>
 							<!-- Project Summary -->
-							<h2>Overview</h2>
+							<h2 id="overview">Overview</h2>
 							<p> 
 								The <b>Labyrinth</b> is a procedural dungeon generation algorithm built in Unity/C# that creates seamlessly connected, thematically distinct 3D areas without loading
 								screens. The algorithm's rules are heavily inspired by the rogue-likes like <i>Enter the Gungeon</i> and the intentional level design of games like <i>Dark Souls</i> and <i>Zelda</i>.
@@ -74,7 +204,7 @@
 							</div>
 
 
-							<h2>Backstory</h2>
+							<h2 id="backstory">Backstory</h2>
 							<p>
 								I began building this algorithm back in 2023 for a club at my university. My peers and I were tasked with procedurally generating a 3D 
 								dungeon for an FPS we were making. It goes without saying that, between coursework and other obligations, a single semester wasn't enough 
@@ -97,7 +227,7 @@
 								The algorithm was made in Unity 3D but can be rewritten to work in any game engine.
 							</p>
 
-							<h2>Blueprints</h2>
+							<h2 id="blueprints">Blueprints</h2>
 							<p>
 								Blueprints are the backbone of the algorithm. They must exist in order for any rooms to generate. Blueprints are simply single-celled marks 
 								on a grid that tell the algorithm "a room can eventually spawn here". When the blueprints are done generating a second pass then parses the 
@@ -130,7 +260,7 @@
 								tell the room what doorways it needs to open. These flags are determined during the blueprint pass of the algorithm.
 							</p>
 
-							<h2>Blueprint Operations</h2>
+							<h2 id="blueprint-operations">Blueprint Operations</h2>
 							<p>
 								As the algorithm grew larger, I began to worry about how hard it would be to debug in future iterations. At the time, the procedural 
 								generator executed all of its code in one go, but I wanted a way to step through each process individually, something akin to setting 
@@ -175,7 +305,7 @@ public sealed class MapGenerationContext
 }</code></pre>
 							</p>
 
-							<h2>Map Generation Context</h2>
+							<h2 id="map-generation-context">Map Generation Context</h2>
 							<p>
 								Just like in assembly, the outputs of some operations need to be stored in memory so other operations can use them later. The map 
 								generation's <code>context</code> holds both the instruction/operation execution order and the data used in those operations.
@@ -289,7 +419,7 @@ public sealed class MapGenerationContext
 								</code></pre>
 							</p>
 
-							<h2>Blueprint Graph</h2>
+							<h2 id="blueprint-graph">Blueprint Graph</h2>
 							Around the time I was implementing this feature, I started learning a bit of Unreal Engine and was impressed by its visual scripting graph, 
 							conveniently called "Blueprints." Conveniently I was able to draw a few parallels between Unreal's Blueprints and mine. Each operation is 
 							essentially a node with inputs, outputs, and an execution order. They can be executed in any order and support a wide range of use cases. 
@@ -375,7 +505,7 @@ public sealed class MapGenerationContext
 	...
 }</code></pre>
 
-							<h2>Zones</h2>
+							<h2 id="zones">Zones</h2>
 							<p>
 								One of the most important problems I set out to solve was a way to generate themed areas and connect them together in a seamless fashion. 
 								As stated in the intro, alongside rogue-likes I'm also a huge fan of RPGs that can transport the player to different areas from multiple 
@@ -396,7 +526,7 @@ public sealed class MapGenerationContext
 								unique generation rules.
 							</p>
 
-							<h2>Unique Blueprint Placement</h2>
+							<h2 id="unique-blueprint-placement">Unique Blueprint Placement</h2>
 							<p>
 								Unique rooms are rooms determined by their zone before runtime; the blueprints generated in place of these rooms _are not_ to be included later in the room parsing procedure. 
 								These are most likely boss rooms, mini-boss rooms, large rooms, or any rooms whose blueprint shape would be difficult or impossible to parse later.
@@ -405,7 +535,7 @@ public sealed class MapGenerationContext
 								generated from this operation can later be used as points for the Delaunay and A\* operations.
 							</p>
 
-							<h2>Divergent Blueprint Placement</h2>
+							<h2 id="divergent-blueprint-placement">Divergent Blueprint Placement</h2>
 							<p>
 								Some zones may have few unique rooms, which means a small set of points for pathfinding. The resulting generation would be very simple and boring. To make the generation a bit more 
 								windy and organic, we place what I call "Divergent Rooms" to add more points to the pathfinding graph.
@@ -414,7 +544,7 @@ public sealed class MapGenerationContext
 								generated from this operation can later be used as points by the Delaunay and A\* operations.
 							</p>
 
-							<h2>Delaunay Triangulation</h2>
+							<h2 id="delaunay-triangulation">Delaunay Triangulation</h2>
 							<p>
 								Delaunay Triangulation takes a set of defined points and creates a triangle mesh that can later be used as a graph for pathfinding. In 2D it's fairly simple, but in 3D it gets more 
 								complicated, instead of triangles we must use tetrahedra and calculate the volume of those tetrahedra using the determinant function.
@@ -423,24 +553,24 @@ public sealed class MapGenerationContext
 								between rooms.
 							</p>
 							
-							<h3>Handling Coplanar Tetrahedron</h3>
+							<h3 id="coplanar-tetrahedron">Handling Coplanar Tetrahedron</h3>
 							<p>
 								A major problem I faced was dealing with degenerate tetrahedra, which can occur when all four points are coplanar. I needed to ensure that at least one blueprint point used in 
 								a tetrahedron exists on a different floor than the other three, to prevent this from happening. When a zone is completely flat (one floor), I can just use 2D Delaunay to connect 
 								the blueprints instead.
 							</p>
-							<h3>Greedy Algorithms</h3>
+							<h3 id="greedy-algorithms">Greedy Algorithms</h3>
 							<p>
 								Delaunay ensures every point in the resultant graph is connected, which means no room is left out. However, this can still result in too many edges, leading to an excess of branches 
 								and rooms. To manage this, I use a greedy algorithm, Prim's Algorithm, to find the MST (minimum spanning tree) in the graph. From there, we can randomly select other edges in the 
 								graph if we want some loops in our dungeon.
 							</p>
-							<h2>Pathfinding</h2>
+							<h2 id="pathfinding">Pathfinding</h2>
 							<p>
 								Many pathfinding algorithms exist that could help connect blueprints together, but none are as fast and versatile as A\*. Using a pathfinding operation, I can either connect two 
 								blueprints directly or pass in a graph and connect all of its nodes. A\* returns all the positions needed to connect the blueprints, and from there I simply spawn new blueprints in 
 								their place.
-								<h3>Heuristic Functions</h3>
+								<h3 id="heuristic-functions">Heuristic Functions</h3>
 								A cost/heuristic function tells A\* how to path toward each blueprint. The heuristic can make the path curvy, straight, or zig-zagged. There are endless possibilities for what the cost function can be, but as of now I use four well-known functions:
 								<br><br>
 								<ol>
@@ -460,13 +590,13 @@ public sealed class MapGenerationContext
 								</div>
 							</p>
 
-							<h2>The Drunkard's Walk</h2>
+							<h2 id="drunkards-walk">The Drunkard's Walk</h2>
 							<p>
 								This was the first algorithm that gave birth to the Labyrinth. Simply put, a blueprint is placed randomly in one of six directions from a 
 								point in space. This continues until a pathway is generated with the desired number of rooms. Seems simple enough at first, but I ran 
 								into a problem: what if the point is already surrounded by other blueprints? Should the algorithm just stop generating and cut its losses?
 								
-								<h3>Backtracking</h3>
+								<h3 id="backtracking">Backtracking</h3>
 								<p>
 									The solution was backtracking. When a conflict occurs, a recursive algorithm backtracks to a previously placed blueprint and attempts 
 									to generate a new one in its place.
@@ -495,13 +625,13 @@ public sealed class MapGenerationContext
 								Drunkard's Walk is still used today for branches that can lead to rewards, trials, and secrets.
 							</p>
 
-							<h2>Room Parsing</h2>
+							<h2 id="room-parsing">Room Parsing</h2>
 							<p>
 								The final pass of the algorithm parses all available blueprints and determines what prefab rooms can be generated from them. 
 								The parsing rules are simple for now, and only four room shapes can currently be generated: "Small" rooms take up a (1, 1, 1) space, 
 								"Long" rooms take up a (2, 1, 1) space, "Tall" rooms take up a (1, 2, 1) space, and "Big" rooms take up a (2, 1, 2) space. For a future 
 								update, I'd like to rework the parsing algorithm to generate rooms of any shape using recursion and rules.
-							<h3>Room Entry Points</h3>
+							<h3 id="room-entry-points">Room Entry Points</h3>
 							<p>
 								As stated earlier, the Blueprint class contains an array called `EntryPointFlags`. This communicates which walls need entranceways 
 								connecting to adjacent rooms. The parser detects which face of the blueprint corresponds to which wall of the room by matching the array 
@@ -522,7 +652,7 @@ public sealed class MapGenerationContext
 
 							</p>
 
-							<h2>Room Rotation</h2>
+							<h2 id="room-rotation">Room Rotation</h2>
 							<p>Rooms can be made to rotate if suitable blueprints are found in different orientations. For instance, if two blueprints are found occupying 
 								a (1, 1, 2) space, we know a "Long" room can fit there, although how can we generate them when they are oriented (2, 1, 1) by default? 
 								Rotation handles this case by rotating not only the room prefab, but also the entry point array of each Blueprint associated with the room,
@@ -551,7 +681,7 @@ public sealed class MapGenerationContext
 }</code></pre>
 							</p>
 							
-							<h2>Upcoming Features</h2>
+							<h2 id="upcoming-features">Upcoming Features</h2>
 								<ul>
 									<li>Rework room parsing algorithm using recursive descent and grid rules</li>
 									<li>Disconnect Unity dependencies and store code in DLL</li>
@@ -561,7 +691,7 @@ public sealed class MapGenerationContext
 									<li>Player map</li>
 								</ul>
 
-							<h2>Sources</h2>
+							<h2 id="sources">Sources</h2>
 							[1] <a href="https://vazgriz.com/119/procedurally-generated-dungeons/">Procedurally Generated Dungeons</a>
 							<br>
 							[2] <a href="https://summit-2223-sem1.game-lab.nl/?p=49">D&D Dungeon Generation By Marvin van der Sluis</a>
@@ -601,6 +731,42 @@ public sealed class MapGenerationContext
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!-- Table of Contents behavior -->
+			<script>
+				(function () {
+					var tocLinks = Array.prototype.slice.call(document.querySelectorAll('#toc a[href^="#"]'));
+					if (!tocLinks.length) return;
+
+					var sections = tocLinks.map(function (link) {
+						return document.getElementById(link.getAttribute('href').slice(1));
+					}).filter(Boolean);
+
+					tocLinks.forEach(function (link) {
+						link.addEventListener('click', function (e) {
+							var target = document.getElementById(link.getAttribute('href').slice(1));
+							if (!target) return;
+							e.preventDefault();
+							target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+							history.pushState(null, '', link.getAttribute('href'));
+						});
+					});
+
+					function setActive() {
+						var scrollPos = window.scrollY + 120;
+						var current = sections[0];
+						sections.forEach(function (section) {
+							if (section.offsetTop <= scrollPos) current = section;
+						});
+						tocLinks.forEach(function (link) {
+							link.classList.toggle('active', current && link.getAttribute('href') === '#' + current.id);
+						});
+					}
+
+					window.addEventListener('scroll', setActive, { passive: true });
+					setActive();
+				})();
+			</script>
 
 	</body>
 </html>
