@@ -15,7 +15,7 @@
 			#toc {
 				position: fixed;
 				top: 55%;
-				left: 1em;
+				left: 1.5em;
 				transform: translateY(-50%);
 				width: 220px;
 				max-height: 80vh;
@@ -27,7 +27,7 @@
 				border: solid 1px rgba(176, 196, 222, 0.25);
 				border-radius: 6px;
 				padding: 1.25em 1.5em;
-				max-height: 70vh;
+				max-height: 75vh;
 				overflow-y: auto;
 			}
 
@@ -108,11 +108,12 @@
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="labyrinth_demo.html" class="active">Labyrinth</a>
+						<li><a href="oddinary_farm.html">Oddinary Farm</a>
 						<li><a href="rogue_nebula.html">Rogue Nebula</a></li>
 						<li><a href="future_scape.html">Future Scape</a></li>
 						<li><a href="unstable_star.html">Unstable Star</a></li>
 						<li><a href="the_devils_diner.html">The Devil's Diner</a></li>
-						<li><a href="bloodlust.html">Bloodlust</a></li>
+						<!-- <li><a href="bloodlust.html">Bloodlust</a></li> (archived)-->
 						<!-- <li><a href="star_raid.html">Star Raid</a></li> (archived) -->
 						<!-- <li><a href="fishy_business.html">Fishy Business</a></li> (archived) -->
 						<!-- <li><a href="soc.html">Spirit of Calamity</a></li> (archived) -->
@@ -170,18 +171,20 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<!-- Project Title -->
-							<h1 class="major">The Labyrinth Procedural Generator</h1>
-							<!-- Game Embed -->
-							<iframe class="embed" frameborder="0" src="https://itch.io/embed-upload/15022834?color=333333" allowfullscreen="" width="1000" height="700"><a href="https://madcolors-entertainment.itch.io/labyrinth-demo">Play Labyrinth Demo on itch.io</a></iframe>
+							<h1 class="major">Labyrinth Procedural Generator</h1>
 							<!-- Big Game Widget -->
 							<iframe class="widget" frameborder="0" src="https://itch.io/embed/3897193?border_width=2&amp;bg_color=0098db&amp;fg_color=ffffff&amp;link_color=0ce6f2&amp;border_color=0ce6f2" width="554" height="169">
 								<a href="https://madcolors-entertainment.itch.io/labyrinth-demo">Labyrinth Demo by Ryan Carpenter</a></iframe>
 							<!-- Small Game Widget -->
 							<iframe class="smallWidget" frameborder="0" src="https://itch.io/embed/3897193?bor`der_width=2&amp;bg_color=0098db&amp;fg_color=ffffff&amp;link_color=0ce6f2&amp;border_color=0ce6f2" width="210" height="169">
 								<a href="https://madcolors-entertainment.itch.io/labyrinth-demo">Labyrinth Demo by Ryan Carpenter</a></iframe>
+							<!-- Orbit Image -->
+							<div style="text-align: center;">
+								<Img src="/images/labyrinth_images/orbit_loop.gif">
+							</div>
 							<!-- Project Summary -->
 							<h2 id="overview">Overview</h2>
-							<p> 
+							<p>
 								The <b>Labyrinth</b> is a procedural dungeon generation algorithm built in Unity/C# that creates seamlessly connected, thematically distinct 3D areas without loading
 								screens. The algorithm's rules are heavily inspired by the rogue-likes like <i>Enter the Gungeon</i> and the intentional level design of games like <i>Dark Souls</i> and <i>Zelda</i>.
 							</p>
@@ -199,10 +202,12 @@
 								<li><b>Blueprints</b> — a self-designed grid-based intermediate representation that decouples "where a room can go" from "what 
 									room actually spawns there."</li>
 							</ul>
-							<div style="text-align: center;">
-								<Img src="/images/labyrinth_images/orbit_loop.gif">
-							</div>
 
+							<!-- Game Embed -->
+							<div>
+							<iframe class="embed" frameborder="0" src="https://itch.io/embed-upload/15022834?color=333333" allowfullscreen="" width="1000" height="700"><a href="https://madcolors-entertainment.itch.io/labyrinth-demo">Play Labyrinth Demo on itch.io</a></iframe>
+							<p style="text-align: center; font-size: 15px;">Demo can be played in browser or on itch.io</p>
+							</div>
 
 							<h2 id="backstory">Backstory</h2>
 							<p>
