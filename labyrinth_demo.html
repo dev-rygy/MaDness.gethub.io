@@ -99,6 +99,15 @@
 				}
 			}
 		</style>
+		<script>
+			MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['$$', '$$']]
+				}
+			};
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 	</head>
 	<body class="is-preload">
 		<!-- Header -->
@@ -110,6 +119,7 @@
 						<li><a href="labyrinth_demo.html" class="active">Labyrinth</a>
 						<li><a href="oddinary_farm.html">Oddinary Farm</a>
 						<li><a href="rogue_nebula.html">Rogue Nebula</a></li>
+						<li><a href="hlsl_shaders.html">HLSL Shaders</a></li>
 						<li><a href="future_scape.html">Future Scape</a></li>
 						<li><a href="unstable_star.html">Unstable Star</a></li>
 						<li><a href="the_devils_diner.html">The Devil's Diner</a></li>
@@ -188,7 +198,7 @@
 								<Img src="/images/labyrinth_images/titlescreen_thin.png">
 							</div>
 							<!-- Version Badge -->
-							<img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue">
+							<img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue">
 							<!-- Links -->
 							<ul class="icons">
 								<li>Link to Demo - <a href="https://madcolors-entertainment.itch.io/labyrinth-demo" class="icon brands fa-itch-io" target="_blank" rel="noopener noreferrer"><span class="label">Itch.io</span></a></li>
@@ -216,7 +226,7 @@
 											<td> 
 												Parsable marks on a grid that can eventually be used to spawn rooms.
 											</td>
-											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue"></td>
 											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
 										</tr>
 										<tr>
@@ -224,7 +234,7 @@
 											<td> 
 												Instruction-set style units of execution that make the algorithm step-able.
 											</td>
-											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue"></td>
 											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
 										</tr>
 										<tr>
@@ -232,7 +242,7 @@
 											<td> 
 												Combines blueprint operations into a model that can create a unique map generation style.
 											</td>
-											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue"></td>
 											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
 										</tr>
 										<tr>
@@ -240,7 +250,7 @@
 											<td> 
 												Areas of the map that can house it's own rooms, rules, loot, etc.
 											</td>
-											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue"></td>
 											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
 										</tr>
 										<tr>
@@ -248,7 +258,7 @@
 											<td> 
 												Places necessary rooms in a bounded zone.
 											</td>
-											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue"></td>
 											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
 										</tr>
 										<tr>
@@ -256,7 +266,7 @@
 											<td> 
 												Randomly places blueprints of varying size around the map for more variation.
 											</td>
-											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue"></td>
 											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
 										</tr>
 										<tr>
@@ -264,7 +274,7 @@
 											<td> 
 												Creates a mesh/graph from a list of blueprints that can later be used to connect them with A*.
 											</td>
-											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue"></td>
 											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
 										</tr>
 										<tr>
@@ -272,7 +282,7 @@
 											<td> 
 												Connecting corridors with four with A* using four swappable heuristics to effect path style.
 											</td>
-											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue"></td>
 											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
 										</tr>
 										<tr>
@@ -280,7 +290,7 @@
 											<td> 
 												Places blueprints randomly in a connected path. Can diverge off other paths and has a recursive safety check feature.
 											</td>
-											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue"></td>
 											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
 										</tr>
 										<tr>
@@ -288,7 +298,7 @@
 											<td> 
 												Blueprints are parsed and rooms are chosen to spawn based on their patterns.
 											</td>
-											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue"></td>
 											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Reworking-brown"></td>
 										</tr>
 										<tr>
@@ -296,7 +306,7 @@
 											<td> 
 												An NFA is used to transition the player's states. Also made in a way to support a complex ability system.
 											</td>
-											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue"></td>
 											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Partial-hotpink"></td>
 										</tr>
 										<tr>
@@ -304,16 +314,12 @@
 											<td> 
 												Custom CLI with global commands to help debugging.
 											</td>
-											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue"></td>
 											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
 										</tr>
 									</tbody>
 								</table>
 						</div>
-							<div style="text-align: center;">
-								<Img src="/images/labyrinth_images/orbit_loop.gif">
-							</div>
-
 							<!-- Game Embed
 							<div style="text-align: center;">
 							<iframe class="embed" frameborder="0" src="https://itch.io/embed-upload/15022834?color=333333" allowfullscreen="" width="1280" height="720"><a href="https://madcolors-entertainment.itch.io/labyrinth-demo">Play Labyrinth Demo on itch.io</a></iframe>
@@ -648,7 +654,7 @@ public sealed class MapGenerationContext
 								These are most likely boss rooms, mini-boss rooms, large rooms, or any rooms whose blueprint shape would be difficult or impossible to parse later.
 								<br><br>
 								These rooms can either be fixed (placed in a set position) or bounded (placed randomly within set bounds). Both cases have their respective blueprint operations. The blueprints 
-								generated from this operation can later be used as points for the Delaunay and A\* operations.
+								generated from this operation can later be used as points for the Delaunay and A* operations.
 							</p>
 
 							<h2 id="divergent-blueprint-placement">Divergent Blueprint Placement</h2>
@@ -657,7 +663,7 @@ public sealed class MapGenerationContext
 								windy and organic, we place what I call "Divergent Rooms" to add more points to the pathfinding graph.
 								<br><br>
 								Divergent rooms are a set number of blueprints randomly spawned within a zone. These blueprints can have varied dimensions, described as an input to the operation. The blueprints 
-								generated from this operation can later be used as points by the Delaunay and A\* operations.
+								generated from this operation can later be used as points by the Delaunay and A* operations.
 							</p>
 
 							<h2 id="delaunay-triangulation">Delaunay Triangulation</h2>
@@ -691,15 +697,15 @@ public sealed class MapGenerationContext
 							</p>
 							<h2 id="pathfinding">Pathfinding</h2>
 							<p>
-								Many pathfinding algorithms exist that could help connect blueprints together, but none are as fast and versatile as A\*. Using a pathfinding operation, I can either connect two 
-								blueprints directly or pass in a graph and connect all of its nodes. A\* returns all the positions needed to connect the blueprints, and from there I simply spawn new blueprints in 
+								Many pathfinding algorithms exist that could help connect blueprints together, but none are as fast and versatile as A*. Using a pathfinding operation, I can either connect two 
+								blueprints directly or pass in a graph and connect all of its nodes. A* returns all the positions needed to connect the blueprints, and from there I simply spawn new blueprints in 
 								their place.
 								<h3 id="heuristic-functions">Heuristic Functions</h3>
-								A cost/heuristic function tells A\* how to path toward each blueprint. The heuristic can make the path curvy, straight, or zig-zagged. There are endless possibilities for what the cost function can be, but as of now I use four well-known functions:
+								A cost/heuristic function tells A* how to path toward each blueprint. The heuristic can make the path curvy, straight, or zig-zagged. There are endless possibilities for what the cost function can be, but as of now I use four well-known functions:
 								<br><br>
 								<ol>
 									<li><b>Euclidean:</b> creates a fairly straight path to the target.</li>
-										$$D(x, y) = \sqrt{((x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2)}
+										$$D(x, y) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$$
 									<li><b>Manhattan:</b> causes the path to stay parallel to the x, y, and z axes.</li>
 										$$D(x, y) = | x_2 - x_1 | + | y_2 - y_1 | + | z_2 - z_1 |$$
 									<li><b>Chebyshev:</b> causes the path to zig-zag and staircase.</li>
