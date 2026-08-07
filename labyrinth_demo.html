@@ -155,9 +155,14 @@
 						<li><a href="#room-parsing">Room Parsing</a>
 							<ul>
 								<li><a href="#room-entry-points">Room Entry Points</a></li>
+								<li><a href="#room-rotation">Room Rotation</a></li>
 							</ul>
 						</li>
-						<li><a href="#room-rotation">Room Rotation</a></li>
+						<li><a href="#other-features">Other Features</a></li>
+							<ul>
+								<li><a href="#player-state-machine">Player State Machine</a></li>
+								<li><a href="#command-line-interface">Command Line Interface</a></li>
+							</ul>
 						<li><a href="#upcoming-features">Upcoming Features</a></li>
 						<li><a href="#sources">Sources</a></li>
 					</ul>
@@ -180,34 +185,140 @@
 								<a href="https://madcolors-entertainment.itch.io/labyrinth-demo">Labyrinth Demo by Ryan Carpenter</a></iframe>
 							<!-- Orbit Image -->
 							<div style="text-align: center;">
-								<Img src="/images/labyrinth_images/orbit_loop.gif">
+								<Img src="/images/labyrinth_images/titlescreen_thin.png">
 							</div>
+							<!-- Version Badge -->
+							<img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue">
+							<!-- Links -->
+							<ul class="icons">
+								<li>Link to Demo - <a href="https://madcolors-entertainment.itch.io/labyrinth-demo" class="icon brands fa-itch-io" target="_blank" rel="noopener noreferrer"><span class="label">Itch.io</span></a></li>
+								<li>Repository Link - <a href="" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+							</ul>
 							<!-- Project Summary -->
 							<h2 id="overview">Overview</h2>
 							<p>
-								The <b>Labyrinth</b> is a procedural dungeon generation algorithm built in Unity/C# that creates seamlessly connected, thematically distinct 3D areas without loading
-								screens. The algorithm's rules are heavily inspired by the rogue-likes like <i>Enter the Gungeon</i> and the intentional level design of games like <i>Dark Souls</i> and <i>Zelda</i>.
+								Highly adaptable procedural dungeon generation algorithm built in Unity/C# with the purpose of creating seamlessly connected, thematically 
+								distinct 3D areas without loading screens.
 							</p>
-
-							<h3>Highlights</h3>
-							<ul>
-								<li><b>Custom operation graph</b> — a hand-built, instruction-set style execution model ("Blueprint Operations") that 
-									makes the entire generation pipeline stepwise and debugable. On top of that the algorithm is highly versatile and many 
-									different generation rules can be applied to suite the map's generation style.</li>
-								<li><b>2D & 3D Delaunay triangulation</b> — used to connect rooms into a navigable graph, including handling for degenerate/coplanar 
-									cases in 3D.</li>
-								<li><b>Graph algorithms</b> — Prim's Algorithm for minimum spanning trees, plus randomized cycle selection for controlled dungeon looping.</li>
-								<li><b>A* pathfinding</b> — connecting corridors with four swappable heuristics that effect the path's style.</li>
-								<li><b>Zone system</b> — modular, themed areas that connect enabling multi-entry-point worlds with no scene loading.</li>
-								<li><b>Blueprints</b> — a self-designed grid-based intermediate representation that decouples "where a room can go" from "what 
-									room actually spawns there."</li>
-							</ul>
-
-							<!-- Game Embed -->
-							<div>
-							<iframe class="embed" frameborder="0" src="https://itch.io/embed-upload/15022834?color=333333" allowfullscreen="" width="1000" height="700"><a href="https://madcolors-entertainment.itch.io/labyrinth-demo">Play Labyrinth Demo on itch.io</a></iframe>
-							<p style="text-align: center; font-size: 15px;">Demo can be played in browser or on itch.io</p>
+							<div class="table-wrapper">
+								<table>
+									<thead>
+										<tr>
+											<th>Feature</th>
+											<th>Description</th>
+											<th>Version</th>
+											<th>Status</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Blueprints</td>
+											<td> 
+												Parsable marks on a grid that can eventually be used to spawn rooms.
+											</td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
+										</tr>
+										<tr>
+											<td>Blueprint Operations</td>
+											<td> 
+												Instruction-set style units of execution that make the algorithm step-able.
+											</td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
+										</tr>
+										<tr>
+											<td>Blueprint Graph</td>
+											<td> 
+												Combines blueprint operations into a model that can create a unique map generation style.
+											</td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
+										</tr>
+										<tr>
+											<td>Zones</td>
+											<td> 
+												Areas of the map that can house it's own rooms, rules, loot, etc.
+											</td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
+										</tr>
+										<tr>
+											<td>Unique Blueprint Placement</td>
+											<td> 
+												Places necessary rooms in a bounded zone.
+											</td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
+										</tr>
+										<tr>
+											<td>Divergent Blueprint Placement</td>
+											<td> 
+												Randomly places blueprints of varying size around the map for more variation.
+											</td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
+										</tr>
+										<tr>
+											<td>Delaunay Triangulation (Bowyer-Watson Algorithm)</td>
+											<td> 
+												Creates a mesh/graph from a list of blueprints that can later be used to connect them with A*.
+											</td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
+										</tr>
+										<tr>
+											<td>Pathfinding</td>
+											<td> 
+												Connecting corridors with four with A* using four swappable heuristics to effect path style.
+											</td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
+										</tr>
+										<tr>
+											<td>The Drunkard's Walk</td>
+											<td> 
+												Places blueprints randomly in a connected path. Can diverge off other paths and has a recursive safety check feature.
+											</td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
+										</tr>
+										<tr>
+											<td>Room Parsing</td>
+											<td> 
+												Blueprints are parsed and rooms are chosen to spawn based on their patterns.
+											</td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Reworking-brown"></td>
+										</tr>
+										<tr>
+											<td>Player State Machine</td>
+											<td> 
+												An NFA is used to transition the player's states. Also made in a way to support a complex ability system.
+											</td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Partial-hotpink"></td>
+										</tr>
+										<tr>
+											<td>Command Line Interface</td>
+											<td> 
+												Custom CLI with global commands to help debugging.
+											</td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Version-1.0.0-lightblue"></td>
+											<td><img alt="Static Badge" src="https://img.shields.io/badge/Status-Active-green"></td>
+										</tr>
+									</tbody>
+								</table>
+						</div>
+							<div style="text-align: center;">
+								<Img src="/images/labyrinth_images/orbit_loop.gif">
 							</div>
+
+							<!-- Game Embed
+							<div style="text-align: center;">
+							<iframe class="embed" frameborder="0" src="https://itch.io/embed-upload/15022834?color=333333" allowfullscreen="" width="1280" height="720"><a href="https://madcolors-entertainment.itch.io/labyrinth-demo">Play Labyrinth Demo on itch.io</a></iframe>
+							<p style="text-align: center; font-size: 15px;">Demo can be played in browser or on itch.io</p>
+							</div>-->
 
 							<h2 id="backstory">Backstory</h2>
 							<p>
@@ -217,15 +328,15 @@
 								the algorithm back up and kept developing it in 2024.
 								<br><br>
 								The procedural generation was simple at first, relying on an algorithm called The Drunkard's Walk that spawned rooms in random directions 
-								from the previous one. I later added Delaunay triangulation, A\*, and Prim's algorithm to the pipeline.
+								from the previous one. I later added Delaunay triangulation, A*, and Prim's algorithm to the pipeline.
 								<br><br>
 								Most of the algorithms the Labyrinth uses today are well known in the proc-gen community, but there's one feature I can genuinely call my 
 								own. Back in the club days, I had little formal knowledge of how procedural generation actually worked, so in a way, I had to get creative.
 								Drawing on what I knew about Drunkard's Walk and rule tiles, I came up with a feature I call "Blueprints", individual, single-celled 
 								components on a grid that combine to form an entire map.
 								<br><br>
-								I've always admired how games like _The Binding of Isaac_, _Enter the Gungeon_, and _Wizard of Legend_ generate their maps, but I equally 
-								admired the intricate, deliberate level design of games like _Zelda_ and _Dark Souls_. Was there a way to randomize dungeon layouts while 
+								I've always admired how games like <em>The Binding of Isaac</em>, <em>Enter the Gungeon</em>, and <em>Wizard of Legend</em> generate their maps, but I equally 
+								admired the intricate, deliberate level design of games like <em>Zelda</em> and <em>Dark Souls</em>. Was there a way to randomize dungeon layouts while 
 								still producing levels that felt hand-crafted and made sense? Is it possible to link these levels together seamlessly so that different 
 								themed areas didn't need to be loaded in a different scene? That's the problem I set out to solve.
 								<br><br>
@@ -556,6 +667,10 @@ public sealed class MapGenerationContext
 								<br><br>
 								Delaunay uses a set of blueprint positions as points and creates edges connecting them. It also helps prevent the generation of a dungeon with too many long and unnecessary paths 
 								between rooms.
+
+								<div style="text-align: center;">
+									<Img src="/images/labyrinth_images/triangulation.gif">
+								</div>
 							</p>
 							
 							<h3 id="coplanar-tetrahedron">Handling Coplanar Tetrahedron</h3>
@@ -563,6 +678,10 @@ public sealed class MapGenerationContext
 								A major problem I faced was dealing with degenerate tetrahedra, which can occur when all four points are coplanar. I needed to ensure that at least one blueprint point used in 
 								a tetrahedron exists on a different floor than the other three, to prevent this from happening. When a zone is completely flat (one floor), I can just use 2D Delaunay to connect 
 								the blueprints instead.
+
+								<div style="text-align: center;">
+									<Img src="/images/labyrinth_images/coplanar.gif">
+								</div>
 							</p>
 							<h3 id="greedy-algorithms">Greedy Algorithms</h3>
 							<p>
@@ -657,7 +776,7 @@ public sealed class MapGenerationContext
 
 							</p>
 
-							<h2 id="room-rotation">Room Rotation</h2>
+							<h3 id="room-rotation">Room Rotation</h3>
 							<p>Rooms can be made to rotate if suitable blueprints are found in different orientations. For instance, if two blueprints are found occupying 
 								a (1, 1, 2) space, we know a "Long" room can fit there, although how can we generate them when they are oriented (2, 1, 1) by default? 
 								Rotation handles this case by rotating not only the room prefab, but also the entry point array of each Blueprint associated with the room,
@@ -686,6 +805,177 @@ public sealed class MapGenerationContext
 }</code></pre>
 							</p>
 							
+							<h2 id="other-features">Other Features</h2>
+							<h3 id="player-state-machine">Player State Machine</h3>
+							<p>
+								Originally, before I became obsessed with the procedural generator, this project leaned more toward a game than a tech demo. The player 
+								could wield multiple weapons, each housing its own set of abilities, and also cycled through situational states like falling, climbing, and emoting. Without a formal state model, the player codebase would have devolved into an unmanageable tangle of flags and booleans so I turned to finite automata instead.
+								<br>
+								Using the principles from <em>Introduction to the Theory of Computation</em> by Michael Sipser, I modeled the player as an NFA: a set of states 
+								<b>Q</b>, whose transitions are triggered by an input symbol from the alphabet <b>Σ</b>, or by an empty input. The rules break down as follows:
+								<ul>
+									<li><b>States (Q)</b> = { Idle, ComboPrimary, PowerPrimary, ComboSecondary, PowerSecondary, Charge, Cast, Fall, Land, Climb, Dash, DashAttack, 
+									Hit, Death, Emote }</li>
+									<li><b>Alphabet (Σ)</b> = { button_south, button_east, button_west, button_north, left_stick, right_stick, right_shoulder, left_shoulder, 
+									right_trigger, left_trigger, interact, take_damage, IsGrounded() = true, IsGrounded() = false, left_stick + right_stick, left_shoulder + 
+									right_shoulder, emote }</li>
+									<li><b>Start State (q0 ∈ Q)</b> = { Idle }</li>
+									<li><b>Final States (F ⊆ Q)</b> = { Death }</li>
+								</ul>
+
+								<div style="text-align: left;">
+									<Img src="/images/labyrinth_images/player_state_machine_nfa.png">
+								</div>
+								<br>
+								Each state in code is represented as a class. A new instance is created and held in the player's `currentState` variable. Every state 
+								implements a shared interface with three required functions:
+								<br><br>	
+<pre><code>public class SomePlayerState : PlayerState
+{
+    public SomePlayerState(PlayerStateMachine stateMachine) : base(stateMachine) { }
+
+	// Enter is called on the first frame when the state is created.
+    public override void Enter() { }
+
+	// Tick is called on every frame of the stateMachine.
+    public override void Tick(float deltaTime) { }
+
+	// Exit is called right before the state is switched.
+    public override void Exit() { }
+}
+</pre></code>
+								<ul>
+								<li><code>Enter()</code> fires on the first frame the state becomes active, before any `Tick()` calls. It's best used for subscribing to events and 
+									setting up animations.</li>
+								<li><code>Tick()</code> runs every frame the player remains in the state, handling whatever needs continuous updating.</li> 
+								<li><code>Exit()</code> runs on the state's final frame, right before the switch occurs — the next state won't begin executing until this finishes.
+									 It's the right place to unsubscribe from events and cancel any in-progress actions or animations.</li>
+								</ul>
+
+								This state machine kept the player controller predictable even as the ability list grew new states could be added without worrying about which 
+								combination of booleans might silently break another. In hindsight, that discipline ended up mattering more than I expected: once the procedural 
+								generator became the focus of the project, having a player controller that was already modular and easy to scale meant I could add more states an 
+								abilities in the future without worrying about changing source code.
+							</p>
+
+							<h3 id="command-line-interface">Command Line Interface</h3>
+							<p>
+							As my project grew larger, having a solid debugging system in place became essential. Procedural generation is already hard to debug, many 
+							errors are semantic, meaning it can be difficult to trace through code alone. That's what sparked the idea of building a CLI.
+							<br><br>
+							Each command is an object of type `ConsoleCommand`, tied to a unique ID and a delegate. Commands are stored in a command registry - a dictionary keyed by command ID. 
+							The first string typed into the interface is parsed as the command name; everything after it is treated as that command's arguments.
+							<br><br>
+							By decoupling commands from the registry, I ensured they could be created from anywhere in the project, reducing dependencies, mitigating subscription errors, and keeping 
+							the system adaptable to future updates.
+
+							<pre><code>public class ConsoleCommand
+{
+	private string _commandId;
+	private string _commandDescription;
+	private Action<string[]> _execute;
+
+	public string CommandId { get { return _commandId; } }
+	public string CommandDescription { get { return _commandDescription; } }
+	public Action<string[]> Execute { get { return _execute; } }
+
+	public ConsoleCommand(string commandId, string commandDescription, Action<string[]> execute)
+	{
+		_commandId = commandId;
+		_commandDescription = commandDescription;
+		_execute = execute;
+	}
+}
+
+    public class ConsoleCommandRegistry
+    {
+        // List to hold all commands
+        private Dictionary<string, ConsoleCommand> _commands = new();
+
+        public void RegisterCommand(ConsoleCommand command)
+        {
+	        // Prevent duplicate command entries
+            if (_commands.ContainsKey(command.CommandId.ToLower()))
+                return;
+
+            // Add command to registry
+            _commands.Add(command.CommandId, command);
+        }
+
+	public void UnregisterCommand(string commandId)
+	{
+		// Prevent unregistering a command that doesn't exist
+		if (!_commands.ContainsKey(commandId.ToLower()))
+			return;
+			
+		// Remove command from registry
+		_commands.Remove(commandId.ToLower());
+	}
+
+	public bool TryExecuteCommand(string input)
+	{
+		// Split the string into individual parts
+		// This will help us determine the command arguments
+		var splitString = input.Split(' ');
+
+		if (splitString.Length == 0) 
+			return false;
+
+		// The command to execute itself
+		string commandName = splitString[0].ToLower();
+		
+		// Command arguments
+		string[] args = splitString.Length > 1 ? splitString[1..] : Array.Empty<string>();
+
+		// Search command registry for command with the name specified
+		if (_commands.TryGetValue(commandName, out var command))
+		{
+			try         // Attempt to execute the command
+			{
+				command.Execute.Invoke(args);
+				return true;
+			}
+			catch (Exception e)     // Error executing command
+			{
+				Print($"Error executing command '{commandName}': {e.Message}.");
+				return false;
+			}
+		}
+		else    // Command keyword not recognized
+		{
+			Print($"Unknown command - {commandName}.");
+		}
+
+		return false;
+	}
+	
+	...
+}</code></pre>
+							With this setup, commands can be registered or unregistered from any script. Scripts can opt in/out of depending on the registry dynamically 
+							(e.g., register on enable, unregister on disable). Below is the typical format for registering a new command:
+							<br><br>
+<pre><code>CommandRegistry.RegisterCommand(new ConsoleCommand(
+"category.command",                    // Command Name
+"A command that does something.",      // Command Description for 'help' command
+args =>    // Command delegate function
+{
+	// Not needed if command takes no arguments
+	if (args.Length < 2)
+	{
+		Print("No argument given, please enter true or false.");
+		return;
+	}
+	
+	// Extract arguments
+	string arg0 = args[0];
+	string arg1 = args[1];
+	
+	// Execute command with input
+	...  
+	
+}));</code></pre>
+							</p>
+
 							<h2 id="upcoming-features">Upcoming Features</h2>
 								<ul>
 									<li>Rework room parsing algorithm using recursive descent and grid rules</li>
@@ -707,14 +997,6 @@ public sealed class MapGenerationContext
 							<br>
 							[5] <a href="https://ondrejnepozitek.github.io/Edgar-Unity/docs/next/examples/enter-the-gungeon/">https://ondrejnepozitek.github.io/Edgar-Unity/docs/next/examples/enter-the-gungeon/</a>
 							<br>
-							
-							<!-- Links -->
-							<p>
-							<ul class="icons">
-								<li>Link to Game - <a href="https://madcolors-entertainment.itch.io/labyrinth-demo" class="icon brands fa-itch-io" target="_blank" rel="noopener noreferrer"><span class="label">Itch.io</span></a></li>
-								<li>Repository Link - <a href="" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
-							</ul>
-						</p>
 						</div>
 					</section>
 			</div>
