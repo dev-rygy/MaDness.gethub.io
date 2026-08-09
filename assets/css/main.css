@@ -321,6 +321,18 @@ padding: 10px;
 
 	}
 
+	/* Keep scaling up on very large / 4K displays instead of capping at the
+	   1680px breakpoint. clamp()'s min matches the existing 15.5pt value, so
+	   nothing changes below ~2065px wide (1080p is unaffected); above that
+	   it grows with the viewport, reaching ~29pt around 4K and capping at 34pt. */
+	@media screen and (min-width: 1680px) {
+
+		body, input, select, textarea {
+			font-size: clamp(15.5pt, 1vw, 34pt);
+		}
+
+	}
+
 	a {
 		-moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
