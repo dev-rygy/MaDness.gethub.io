@@ -52,7 +52,7 @@
 							<img alt="Static Badge" src="https://img.shields.io/badge/Version-0.1.0-lightblue">
 							<!-- Links -->
 							<ul class="icons">
-								<li>Link to Game - <a href="https://store.steampowered.com/app/3848990/Oddinary_Farm/" class="icon brands fa-steam" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+								<li>Link to Playtest - <a href="https://store.steampowered.com/app/3848990/Oddinary_Farm/" class="icon brands fa-steam" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
 								<li>Repository Link - <a href="https://github.com/colormak3r/Oddinary-Farm" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
 								<li>Website Link - <a href="https://oddinaryfarm.com/" class="icon solid fa-globe" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
 								<li>ClickUp Link - <a href="https://sharing.clickup.com/90131661240/l/h/6-901314181332-1/c4fd09ffc50e2dc" class="icon solid fa-check-square" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
@@ -67,9 +67,9 @@
 							<h2>Overview</h2>
 							<p> 
 								Oddinary Farm is a co-op multiplayer arcade farming game built in Unity. The game combines classic farming mechanics with chaotic gameplay by
-                                juggling casual building with a tower defense aspect. The game is made by Spring Rolls Studio, a small team made up of five college graduates.
-                                The lead programmer is Khoa Ngyuen and the associate lead programmer is me, Ryan Carpenter. The game hosts peer-to-peer multiplayer utalizing
-                                Steamworks Facepunch and Unity's Netcode for Gameobjects. Open playtest is out now, link below!
+                                juggling casual building with a tower defense aspect. The game is made by Spring Rolls Studio, a small team made up of college graduates.
+                                The lead programmer is Khoa Ngyuen and associate lead programmer is me, Ryan Carpenter. The game hosts peer-to-peer multiplayer utilizing
+                                Steamworks Facepunch and Unity's Netcode for Gameobjects. Open playtest is out now, link above!
 							</p>
 
                             <div style="text-align: center;">
@@ -93,7 +93,7 @@
                             <ul>
                                 <li><b>Task Management</b> - Created, assigned, and managed project tasks in ClickUp based on team meetings.</li>
                                 <li><b>Procedural Generation</b> - Contributed to structures spawning randomly around the map with differing loot and obsticles.</li>
-                                <li><b>Multiplayer Mounting Code</b> - Created base code for mounting objects and entities including animals and the hot air balloon.</li>
+                                <li><b>Multiplayer Code</b> - Created base code for mounting objects and entities including animals and the hot air balloon.</li>
                                 <li><b>Game Design</b> - Contributed many ideas to the game including enemies, shop upgrades and items, pets, and combat mechanics.</li>
                                 <li><b>Documentation</b> - Constantly updated code documentation with new commits. Created conventions and style guides for both new
                                 and old developers on the project.</li>
@@ -192,8 +192,9 @@
 										<tr>
 											<td>Procedural Generation</td>
 											<td>
-												The system builds a synchronized, network-authoritative island world out of four layered Perlin noise maps (elevation, moisture, ore, and resource),
-                                                then streams terrain/foliage/resources in and out around each player in real time.
+												The system builds a synchronized island-world out of four layered Perlin noise maps (elevation, moisture, ore, and resource),
+                                                then streams terrain/foliage/resources in and out around each player in real time. Map generation is done 
+												client-side with a seed to improve performance.
 											</td>
 										</tr>
 										<tr>
