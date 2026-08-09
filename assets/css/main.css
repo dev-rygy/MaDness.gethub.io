@@ -193,6 +193,8 @@ padding: 10px;
 	background-color: #0098db;
 	border-radius: 10px;
 	border: 3px solid #0ce6f2;
+	max-width: 100%;
+	height: auto;
 }
 @media screen and (min-width: 1280px) {
 	/* YouTube Embed */
@@ -313,10 +315,26 @@ padding: 10px;
 
 	}
 
-	@media screen and (max-width: 360px) {
+	@media screen and (max-width: 736px) {
 
 		body, input, select, textarea {
 			font-size: 11pt;
+		}
+
+	}
+
+	@media screen and (max-width: 480px) {
+
+		body, input, select, textarea {
+			font-size: 10.5pt;
+		}
+
+	}
+
+	@media screen and (max-width: 360px) {
+
+		body, input, select, textarea {
+			font-size: 10pt;
 		}
 
 	}
@@ -486,6 +504,7 @@ padding: 10px;
 		font-family: "Courier New", monospace;
 		font-size: 0.9em;
 		margin: 0 0 2em 0;
+		max-width: 100%;
 	}
 
 		pre code {
@@ -493,7 +512,29 @@ padding: 10px;
 			line-height: 1.75em;
 			padding: 1em 1.5em;
 			overflow-x: auto;
+			box-sizing: border-box;
 		}
+
+	@media screen and (max-width: 736px) {
+
+		pre code {
+			font-size: 0.85em;
+			line-height: 1.5em;
+			padding: 0.85em 1em;
+			white-space: pre-wrap;
+			word-break: break-word;
+		}
+
+	}
+
+	@media screen and (max-width: 480px) {
+
+		pre code {
+			font-size: 0.75em;
+			padding: 0.75em 0.85em;
+		}
+
+	}
 
 	hr {
 		border: 0;
@@ -2752,6 +2793,14 @@ padding: 10px;
 				}
 
 /* Image */
+
+	/* Responsive default: any image/gif without its own sizing rule
+	   (badges, inline screenshots, etc.) still shrinks to fit its
+	   container instead of overflowing on narrow screens. */
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 
 	.image {
 		border-radius: 0.25em;
