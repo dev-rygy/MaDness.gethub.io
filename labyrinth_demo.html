@@ -17,7 +17,7 @@
 				top: 55%;
 				left: 1.5em;
 				transform: translateY(-50%);
-				width: 220px;
+				width: 10.645em;	/* 220px at the 15.5pt base font size; scales with the 4K font clamp so it doesn't get squished */
 				max-height: 80vh;
 				z-index: 10000;
 			}
@@ -95,8 +95,8 @@
 
 			@media screen and (min-width: 1101px) {
 				#main.wrapper > .inner {
-					margin-left: 260px;
-					max-width: calc(100% - 260px);
+					margin-left: 12.58em;	/* 260px at the 15.5pt base font size; scales with #toc's width */
+					max-width: calc(100% - 12.58em);
 				}
 			}
 		</style>
