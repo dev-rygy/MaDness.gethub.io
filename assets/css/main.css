@@ -3698,39 +3698,67 @@ padding: 10px;
 							color: #ffffff;				/* Page Tab Text Active Color */
 						}
 
-		@media screen and (max-width: 736px) {
-
-			#header {
-				padding: 1em 2em;
+			#header > .navToggle {
+				display: none;
+				border: 0;
+				background: transparent;
+				cursor: pointer;
+				color: #ffffff;
+				font-size: 1.25em;
+				line-height: 1;
+				align-self: center;
 			}
 
-		}
-
-		@media screen and (max-width: 480px) {
+		@media screen and (max-width: 980px) {
 
 			#header {
-				display: block;
-				padding: 0 2em;
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				align-items: center;
+				padding: 1em 2em;
 				text-align: left;
+				position: relative;
 			}
 
 				#header .title {
 					font-size: 1.25em;
-					padding: 1em 0;
+					padding: 0;
+				}
+
+				#header > .navToggle {
+					display: block;
+					margin-left: auto;
 				}
 
 				#header > nav {
+					display: none;
+					position: absolute;
+					top: 100%;
+					left: 0;
+					width: 100%;
+					background-color: #201533;		/* Page Tab Color */
 					border-top: solid 1px rgba(255, 255, 255, 0.15);
 					text-align: inherit;
+					z-index: 10001;
 				}
 
+					#header.nav-active > nav {
+						display: block;
+					}
+
 					#header > nav > ul > li {
-						margin-left: 1.5em;
+						display: block;
+						margin-left: 0;
+						border-bottom: solid 1px rgba(255, 255, 255, 0.075);
 					}
 
 						#header > nav > ul > li a {
-							height: 6em;
-							line-height: 6em;
+							display: block;
+							height: 3em;
+							line-height: 3em;
+							padding: 0 2em;
 						}
 
 		}

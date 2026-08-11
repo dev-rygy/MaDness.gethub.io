@@ -23,6 +23,29 @@
 		if (browser.name == 'ie')
 			$body.addClass('is-ie');
 
+	// Header Nav (phone hamburger toggle).
+		var $header = $('#header'),
+			$headerNav = $header.find('nav');
+
+		if ($headerNav.length > 0) {
+
+			$('<a href="#navigation" class="navToggle icon solid fa-bars"><span class="label">Menu</span></a>')
+				.insertAfter($header.find('.title'))
+				.on('click', function(event) {
+
+					event.preventDefault();
+					event.stopPropagation();
+
+					$header.toggleClass('nav-active');
+
+				});
+
+			$headerNav.find('a').on('click', function() {
+				$header.removeClass('nav-active');
+			});
+
+		}
+
 	// Play initial animations on page load.
 		$window.on('load', function() {
 			window.setTimeout(function() {
