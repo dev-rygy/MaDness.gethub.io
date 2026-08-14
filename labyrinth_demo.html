@@ -205,11 +205,18 @@
 								<li>Link to Demo - <a href="https://dev-rygy.itch.io/labyrinth-procedural-generator" class="icon brands fa-itch-io" target="_blank" rel="noopener noreferrer"><span class="label">Itch.io</span></a></li>
 								<li>Repository Link - <a href="https://github.com/dev-rygy/labyrinth-algorithm" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
 							</ul>
+							<!-- Teaser -->
+                            <div style="text-align: center;">
+							    <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/2zaMeLho7Qo?si=eiCe9PiZA-V2eF15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
 							<!-- Project Summary -->
 							<h2 id="overview">Overview</h2>
 							<p>
 								Seemless procedural dungeon generation algorithm built in Unity/C# with the purpose of creating seamlessly connected, thematically 
-								distinct 3D areas without loading screens.
+								distinct areas into one contiguous map without teleporting or loading screens. Most techniques used in the algorithm are 
+								fairly well known within the proc gen community except for one feature. I first occupy grid space with marks I call "Blueprints" 
+								and then parse them later to create rooms of varying shape and size. This provides some variability to what can spawn between 
+								critical rooms, something I haven't seen in many rogue-like games that use similar techniques.
 							</p>
 							<div class="table-wrapper">
 								<table>
