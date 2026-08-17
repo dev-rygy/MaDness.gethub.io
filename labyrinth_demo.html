@@ -212,7 +212,7 @@
 							<!-- Project Summary -->
 							<h2 id="overview">Overview</h2>
 							<p>
-								Procedural dungeon generation algorithm built in Unity/C# with the purpose of creating seamlessly connected, thematically 
+								Procedural dungeon generation algorithm built in Unity/C# with the purpose of creating and linking seamlessly connected, thematically 
 								distinct areas into one contiguous map without teleporting or loading screens. Most techniques used in the algorithm are 
 								fairly well known within the proc gen community except for one feature. I first occupy grid space with marks I call "Blueprints" 
 								and then parse them later to create rooms of varying shape and size. This provides some variability to what can spawn between 
@@ -371,15 +371,15 @@
 {
 	public readonly string CellID;
 	public readonly Vector3Int Position;    // Position of blueprint coords on grid
-	public bool Claimed { get; set; }       // Prevents/allows parsing algorithm to use blueprint
+	public bool Available { get; set; }       // Prevents/allows parsing algorithm to use blueprint
 	public bool[] EntryPointFlags { get; set; }
 
 	// Constructor
-	public Blueprint(Vector3Int postion, string cellID = "Blueprint")
+	public Blueprint(Vector3Int position, string cellID = "Blueprint")
 	{
-		Claimed = true;
+		Available = true;
 		CellID = cellID;
-		Position = postion;
+		Position = position;
 		EntryPointFlags = new bool[6];       // A flag to mark which entrances should be open for a room
 	}
 }</code></pre>
@@ -808,12 +808,12 @@ public sealed class MapGenerationContext
     bool[] rotatedArray = new bool[entrypointArray.Length];
     if (rotation.y == 90)      // If 90 degree rotation shift down
     {
-        rotatedArray[0] = entrypointFlagArray[2]; // Positive X to Negative Z
-        rotatedArray[1] = entrypointFlagArray[3]; // Negative X to Positive Z
-        rotatedArray[2] = entrypointFlagArray[1]; // Positive Z to Negative X
-        rotatedArray[3] = entrypointFlagArray[0]; // Negative Z to Positive X
-        rotatedArray[4] = entrypointFlagArray[4]; // Positive Y direction the same
-        rotatedArray[5] = entrypointFlagArray[5]; // Negative Y direction the same
+        rotatedArray[0] = entrypointArray[2]; // Positive X to Negative Z
+        rotatedArray[1] = entrypointArray[3]; // Negative X to Positive Z
+        rotatedArray[2] = entrypointArray[1]; // Positive Z to Negative X
+        rotatedArray[3] = entrypointArray[0]; // Negative Z to Positive X
+        rotatedArray[4] = entrypointArray[4]; // Positive Y direction the same
+        rotatedArray[5] = entrypointArray[5]; // Negative Y direction the same
     }
     
     return rotatedArray;
