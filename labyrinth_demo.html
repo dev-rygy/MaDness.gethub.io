@@ -676,11 +676,14 @@ public sealed class MapGenerationContext
 
 							<h2 id="delaunay-triangulation">Delaunay Triangulation</h2>
 							<p>
-								Delaunay Triangulation takes a set of defined points and creates a triangle mesh that can later be used as a graph for pathfinding. In 2D it's fairly simple, but in 3D it gets more 
-								complicated, instead of triangles we must use tetrahedra and calculate the volume of those tetrahedra using the determinant function.
+								Delaunay Triangulation takes a set of defined points and creates a mesh such that no vertex lies inside the circumcircle of a triangle in the mesh. 
+								That mesh that can later be used as a graph for pathfinding. In 2D it's fairly simple, but in 3D it gets more complicated, instead of triangles we must use 
+								tetrahedra and find the circumsphere of that tetrahedron using the determinant.
 								<br><br>
-								Delaunay uses a set of blueprint positions as points and creates edges connecting them. It also helps prevent the generation of a dungeon with too many long and unnecessary paths 
-								between rooms.
+								This article helped me calculate those things: <a href="https://mathworld.wolfram.com/Circumsphere.html">https://mathworld.wolfram.com/Circumsphere.html</a>
+								<br><br>
+								My implementation of Delaunay uses a set of blueprint positions as points and creates edges connecting them. It also helps prevent the generation of a dungeon 
+								with too many long and unnecessary paths between rooms.
 
 								<div style="text-align: center;">
 									<Img src="/images/labyrinth_images/triangulation.gif">
